@@ -11,7 +11,7 @@ class Yugioh extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = YugiohTheme.dark();
+    final theme = YugiohTheme.light();
     return MaterialApp(
       theme: theme,
       title: 'Yu-Gi-Oh!',

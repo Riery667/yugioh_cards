@@ -39,13 +39,13 @@ class YugiohTheme {
 //   );
 
   static TextTheme lightTextTheme = TextTheme(
-    bodyText1: const TextStyle(
+    headline1: const TextStyle(
       fontFamily: 'Matrix',
-      fontSize: 14.0,
+      fontSize: 32.0,
       fontWeight: FontWeight.w700,
       color: Colors.black,
     ),
-    headline1: GoogleFonts.openSans(
+    bodyText1: GoogleFonts.openSans(
       fontSize: 32.0,
       fontWeight: FontWeight.bold,
       color: Colors.black,
