@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:yugioh_cards/screens/card_libraty_screen.dart';
+import 'package:yugioh_cards/screens/libraty_card_screen.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -12,7 +12,7 @@ class _HomeState extends State<Home> {
   int _selectedIndex = 0;
 
   static List<Widget> pages = <Widget>[
-    const CardLibratyScreen(),
+    const LibratyCardScreen(),
     Container(color: Colors.green),
   ];
 
