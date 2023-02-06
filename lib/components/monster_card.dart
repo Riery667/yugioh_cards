@@ -1,26 +1,31 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/material.dart';
+import 'package:yugioh_cards/models/models.dart';
 
 class MonsterCard extends StatelessWidget {
-  const MonsterCard({super.key});
+  final YugiohCard card;
+  const MonsterCard({super.key, required this.card});
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Container(
-        padding: const EdgeInsets.all(16),
-        constraints: const BoxConstraints.expand(
-          width: 350,
-          height: 450,
-        ),
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage('assets/card_pics/kuriboh.jpg'),
-            fit: BoxFit.cover,
-          ),
-          borderRadius: BorderRadius.all(Radius.circular(10.0)),
-        ),
+    return Container(
+      height: 10,
+      width: 10,
+      color: Colors.black54,
+      child: Stack(
+        children: [
+          Image.asset(card.backgroundTexture),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(8, 6, 8, 6),
+            child: Column(
+              children: [
+                Container(
+                  height: 80,
+                  color: Colors.white,
+                )
+              ],
+            ),
+          )
+        ],
       ),
     );
   }
