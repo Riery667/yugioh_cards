@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:yugioh_cards/home.dart';
-import 'package:yugioh_cards/yuguioh_theme.dart';
+import 'package:yugioh_cards/yugioh_theme.dart';
 
 void main() {
   runApp(const Yugioh());

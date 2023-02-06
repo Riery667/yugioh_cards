@@ -4,7 +4,7 @@ class CardType {
   static const trapCard = 'trapCard';
 }
 
-class LibratyCard {
+class YugiohCard {
   String name;
   String cardType;
   //what tipe of de monster, and will not be required because exist card with out a attribute
@@ -18,22 +18,22 @@ class LibratyCard {
   String def;
   String noLevelSubTittle;
 
-  LibratyCard({
+  YugiohCard({
     required this.name,
     required this.cardType,
     required this.attribute,
-    this.level = '1',
+    this.level = '',
     required this.cardImage,
     required this.backgroundTexture,
-    this.typeOfMonster = 'dark',
+    this.typeOfMonster = '',
     required this.description,
     this.atk = '',
     this.def = '',
     this.noLevelSubTittle = '',
   });
 
-  factory LibratyCard.fromJson(Map<String, dynamic> json) {
-    return LibratyCard(
+  factory YugiohCard.fromJson(Map<String, dynamic> json) {
+    return YugiohCard(
       name: json['name'] ?? '',
       cardType: json['cardType'] ?? '',
       attribute: json['attribute'] ?? '',
