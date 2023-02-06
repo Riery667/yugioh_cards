@@ -16,7 +16,7 @@ class CardListView extends StatelessWidget {
       child: GridView.builder(
         itemCount: cards.length,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
+            crossAxisCount: 2, childAspectRatio: 3.1 / 4.6
         ),
         itemBuilder: (context, index) {
           final simpleCard = cards[index];

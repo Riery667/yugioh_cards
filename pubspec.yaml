@@ -65,6 +65,7 @@ flutter:
     - assets/attribute_icons/
     - assets/card_pics/
     - assets/card_texture/
+    - assets/level_icon/
     - assets/sample_data/
 
 
