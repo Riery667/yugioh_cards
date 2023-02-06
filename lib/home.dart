@@ -12,7 +12,7 @@ class _HomeState extends State<Home> {
   int _selectedIndex = 0;
 
   static List<Widget> pages = <Widget>[
-    const LibratyCardScreen(),
+    LibratyCardScreen(),
     Container(color: Colors.green),
   ];
 
