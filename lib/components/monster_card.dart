@@ -9,6 +9,8 @@ class MonsterCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final cardNames = card.name.split(' ');
+
     final textTheme = Theme.of(context).textTheme;
     return LayoutBuilder(builder: (context, BoxConstraints bc) {
       final size = bc.biggest;
@@ -30,95 +32,154 @@ class MonsterCard extends StatelessWidget {
               children: [
                 Container(
                   height: size.height * 0.10,
-                  width: double.maxFinite,
-                  color: Colors.white54,
+                  width: size.width,
+                  decoration: const BoxDecoration(
+                    border: Border(
+                      top: BorderSide(
+                        style: BorderStyle.solid,
+                        width: 4,
+                        color: Colors.white38,
+                      ),
+                      left: BorderSide(
+                        style: BorderStyle.solid,
+                        width: 4,
+                        color: Colors.white54,
+                      ),
+                      bottom: BorderSide(
+                        style: BorderStyle.solid,
+                        width: 4,
+                        color: Colors.black45,
+                      ),
+                      right: BorderSide(
+                        style: BorderStyle.solid,
+                        width: 4,
+                        color: Colors.black54,
+                      ),
+                    ),
+                  ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(8, 4, 0, 8),
-                        child: RichText(
-                          text: TextSpan(
-                            text: card.name.substring(0, 1),
-                            style: textTheme.displayLarge,
-                            children: [
-                              TextSpan(
-                                text: card.name.substring(1),
-                                style: textTheme.displayMedium,
-                              ),
-                            ],
+                      Expanded(
+                        child: Padding(
+                          padding: const EdgeInsets.fromLTRB(8, 4, 0, 8),
+                          child: AutoSizeText.rich(
+                            TextSpan(
+                              text: cardNames[0].substring(0, 1),
+                              style: textTheme.displayLarge,
+                              children: [
+                                TextSpan(
+                                  text: "${cardNames[0].substring(1)} ",
+                                  style: textTheme.displayMedium,
+                                ),
+                                if (cardNames.length > 1)
+                                  ...List.generate(
+                                    cardNames.length - 1,
+                                    (index) => TextSpan(
+                                      text:
+                                          cardNames[index + 1].substring(0, 1),
+                                      style: textTheme.displayLarge,
+                                      children: [
+                                        TextSpan(
+                                          text:
+                                              "${cardNames[index + 1].substring(1)} ",
+                                          style: textTheme.displayMedium,
+                                        ),
+                                      ],
+                                    ),
+                                  )
+                              ],
+                            ),
                           ),
                         ),
                       ),
-                      Container(
-                        height: size.height * 0.20,
-                        width: size.width * 0.20,
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            image: AssetImage(card.attribute),
+                      SizedBox(
+                        height: size.height * 0.10,
+                        width: size.width * 0.10,
+                        child: Positioned.fill(
+                          child: DecoratedBox(
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                image: AssetImage(card.attribute),
+                              ),
+                            ),
                           ),
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(0, 4, 4, 4),
-                  child: SizedBox(
-                    height: size.height * 0.04,
-                    width: size.width,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: List.generate(
-                        card.level,
-                        (index) => Padding(
-                          padding: const EdgeInsets.fromLTRB(1, 0, 1, 0),
-                          child: Container(
-                            height: 20,
-                            width: 20,
-                            decoration: const BoxDecoration(
-                              image: DecorationImage(
-                                image: AssetImage(AppAssets.level),
-                                fit: BoxFit.fill,
+                //Level of monster
+                Column(
+                  verticalDirection: VerticalDirection.up,
+                  children: [
+                    //card image
+                    SizedBox(
+                      height: size.height * 0.5,
+                      width: size.width * 0.78,
+                      child: Positioned.fill(
+                          child: DecoratedBox(
+                        decoration: BoxDecoration(
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.shade900,
+                              spreadRadius: 8,
+                              blurRadius: 12,
+                            ),
+                          ],
+                          border: const Border(
+                            top: BorderSide(
+                              width: 6,
+                              color: Colors.white38,
+                            ),
+                            left: BorderSide(
+                              width: 6,
+                              color: Colors.white54,
+                            ),
+                            bottom: BorderSide(
+                              width: 6,
+                              color: Colors.black45,
+                            ),
+                            right: BorderSide(
+                              width: 6,
+                              color: Colors.black54,
+                            ),
+                          ),
+                          image: DecorationImage(
+                            image: AssetImage(
+                              card.cardImage,
+                            ),
+                          ),
+                        ),
+                      )),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(0, 4, 4, 4),
+                      child: SizedBox(
+                        height: size.height * 0.04,
+                        width: size.width,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: List.generate(
+                            card.level,
+                            (index) => Padding(
+                              padding: const EdgeInsets.fromLTRB(1, 0, 1, 0),
+                              child: Container(
+                                height: 20,
+                                width: 20,
+                                decoration: const BoxDecoration(
+                                  image: DecorationImage(
+                                    image: AssetImage(AppAssets.level),
+                                    fit: BoxFit.fill,
+                                  ),
+                                ),
                               ),
                             ),
                           ),
                         ),
                       ),
                     ),
-                  ),
-                ),
-                SizedBox(
-                  height: size.height * 0.5,
-                  width: size.width * 0.78,
-                  child: Positioned.fill(
-                      child: DecoratedBox(
-                    decoration: BoxDecoration(
-                      border: const Border(
-                        top: BorderSide(
-                          width: 6,
-                          color: Colors.white38,
-                        ),
-                        left: BorderSide(
-                          width: 6,
-                          color: Colors.white54,
-                        ),
-                        bottom: BorderSide(
-                          width: 6,
-                          color: Colors.black45,
-                        ),
-                        right: BorderSide(
-                          width: 6,
-                          color: Colors.black54,
-                        ),
-                      ),
-                      image: DecorationImage(
-                        image: AssetImage(
-                          card.cardImage,
-                        ),
-                      ),
-                    ),
-                  )),
+                  ],
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 8),
@@ -150,28 +211,26 @@ class MonsterCard extends StatelessWidget {
                               ],
                             ),
                           ),
-                          Container(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  children: [
-                                    Text(
-                                      'ATK/${card.atk}',
-                                      style: textTheme.bodySmall,
-                                    ),
-                                    const SizedBox(
-                                      width: 5,
-                                    ),
-                                    Text(
-                                      'DEF/${card.def}',
-                                      style: textTheme.bodySmall,
-                                    ),
-                                  ],
-                                )
-                              ],
-                            ),
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  Text(
+                                    'ATK/${card.atk}',
+                                    style: textTheme.bodySmall,
+                                  ),
+                                  const SizedBox(
+                                    width: 5,
+                                  ),
+                                  Text(
+                                    'DEF/${card.def}',
+                                    style: textTheme.bodySmall,
+                                  ),
+                                ],
+                              )
+                            ],
                           )
                         ],
                       ),
