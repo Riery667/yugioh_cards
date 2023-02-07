@@ -12,6 +12,19 @@
             "atk": "300",
             "def": "200",
             "noLevelSubTittle": null
+        },
+        {
+            "name": "KURIBOH",
+            "cardType": "monsterCard",
+            "attribute": "assets/attribute_icons/dark.png",
+            "level": 2,
+            "cardImage": "assets/card_pics/kuriboh.jpg",
+            "backgroundTexture": "assets/card_texture/effect_texture.png",
+            "typeOfMonster": "[ Fiend / Effect ]",
+            "description": "During damage calculation, if your opponent's monster attacks (Quick Effect): You can discard this card; you take no battle damage from that battle.",
+            "atk": "300",
+            "def": "200",
+            "noLevelSubTittle": null
         }
     ]
 }
