@@ -39,31 +39,46 @@ class YugiohTheme {
 //   );
 
   static TextTheme lightTextTheme = TextTheme(
-    headline1: const TextStyle(
-      fontFamily: 'Matrix',
+
+    //Tittle fist letter
+    displayLarge: const TextStyle(
+      fontFamily: 'Matrix Regular 1',
       fontSize: 32.0,
       fontWeight: FontWeight.w700,
       color: Colors.black,
     ),
-    headline2: const TextStyle(
-      fontFamily: 'Matrix',
+
+    //Tittle second + letter
+    displayMedium: const TextStyle(
+      fontFamily: 'Matrix Regular 1',
       fontSize: 24.0,
       fontWeight: FontWeight.w700,
       color: Colors.black,
     ),
-    bodyText1: const TextStyle(
-      fontFamily: 'Stone Serif',
-      fontSize: 14.0,
-      fontWeight: FontWeight.w700,
+
+    //type of monster
+    bodyLarge: const TextStyle(
+      fontFamily: 'Stone Serif Regular 1',
+      fontSize: 10.0,
+      fontWeight: FontWeight.w900,
       color: Colors.black,
     ),
-    bodyText2: const TextStyle(
+
+    //card lore
+    bodyMedium: const TextStyle(
       fontFamily: 'Stone Serif',
-      fontSize: 8.0,
-      fontWeight: FontWeight.w700,
+      fontStyle: FontStyle.italic,
+      fontSize: 10.0,
+      fontWeight: FontWeight.w900,
       color: Colors.black,
     ),
-    headline6: GoogleFonts.openSans(
+    bodySmall: const TextStyle(
+      fontFamily: 'Stone Serif Regular 1',
+      fontSize: 12.0,
+      fontWeight: FontWeight.w900,
+      color: Colors.black,
+    ),
+    titleLarge: GoogleFonts.openSans(
       fontSize: 20.0,
       fontWeight: FontWeight.w600,
       color: Colors.black,
@@ -71,24 +86,24 @@ class YugiohTheme {
   );
 
   static TextTheme darkTextTheme = TextTheme(
-    headline1: const TextStyle(
+    displayLarge: const TextStyle(
       fontFamily: 'Matrix',
       fontSize: 32.0,
       fontWeight: FontWeight.w700,
       color: Colors.white,
     ),
-    headline2: const TextStyle(
+    displayMedium: const TextStyle(
       fontFamily: 'Matrix',
       fontSize: 22.0,
       fontWeight: FontWeight.w700,
       color: Colors.white,
     ),
-    headline3: GoogleFonts.openSans(
+    displaySmall: GoogleFonts.openSans(
       fontSize: 16.0,
       fontWeight: FontWeight.w600,
       color: Colors.white,
     ),
-    headline6: GoogleFonts.openSans(
+    titleLarge: GoogleFonts.openSans(
       fontSize: 20.0,
       fontWeight: FontWeight.w600,
       color: Colors.white,

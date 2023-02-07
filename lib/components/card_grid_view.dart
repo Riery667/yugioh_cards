@@ -4,10 +4,10 @@ import 'package:yugioh_cards/components/spell_card.dart';
 import 'package:yugioh_cards/components/trap_card.dart';
 import 'package:yugioh_cards/models/models.dart';
 
-class CardListView extends StatelessWidget {
+class CardGridView extends StatelessWidget {
   final List<YugiohCard> cards;
 
-  const CardListView({super.key, required this.cards});
+  const CardGridView({super.key, required this.cards});
 
   @override
   Widget build(BuildContext context) {
@@ -16,11 +16,13 @@ class CardListView extends StatelessWidget {
       child: GridView.builder(
         itemCount: cards.length,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2, childAspectRatio: 3.1 / 4.6
-        ),
+            crossAxisCount: 2, childAspectRatio: 3.1 / 4.6),
         itemBuilder: (context, index) {
           final simpleCard = cards[index];
-          return buildCard(simpleCard);
+          return Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: buildCard(simpleCard),
+          );
         },
       ),
     );

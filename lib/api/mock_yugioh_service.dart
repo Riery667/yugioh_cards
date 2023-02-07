@@ -15,7 +15,7 @@ class MockYugiohService {
   Future<List<YugiohCard>> _getCards() async {
     await Future.delayed(const Duration(milliseconds: 1000));
     final dataString =
-        await _loadAsset('assets/sample_data/sample_libraty_cards.json');
+        await _loadAsset('assets/sample_data/sample_library_cards.json');
     final Map<String, dynamic> json = jsonDecode(dataString);
 
     if (json['cards'] != null) {

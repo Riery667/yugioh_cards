@@ -45,7 +45,7 @@
             "attribute": "assets/attribute_icons/light.png",
             "level": 8,
             "cardImage": "assets/card_pics/white_dragon.jpg",
-            "backgroundTexture": "assets/card_texture/effect_texture.png",
+            "backgroundTexture": "assets/card_texture/normal_texture.png",
             "typeOfMonster": "[ DRAGON ]",
             "description": "This legendary dragon is a powerful engine of destruction. Virtually invincible, very few have faced this awesome creature and lived to tell the tale.",
             "atk": "3000",
