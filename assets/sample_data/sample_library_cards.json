@@ -80,7 +80,7 @@
         },
         {
             "name": "Pot of Greed",
-            "cardType": "monsterCard",
+            "cardType": "spellCard",
             "attribute": "assets/attribute_icons/divine.png",
             "level": 0,
             "cardImage": "assets/card_pics/pot_of_greed.jpg",

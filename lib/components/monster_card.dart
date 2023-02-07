@@ -211,6 +211,7 @@ class MonsterCard extends StatelessWidget {
                               ],
                             ),
                           ),
+                          if (card.cardType == 'monsterCard')
                           Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
