@@ -1,10 +1,10 @@
 {
     "cards": [
         {
-            "name": "Kuriboh",
+            "name": "KURIBOH",
             "cardType": "monsterCard",
             "attribute": "assets/attribute_icons/dark.png",
-            "level": "assets/level_icon/level.png",
+            "level": 2,
             "cardImage": "assets/card_pics/kuriboh.jpg",
             "backgroundTexture": "assets/card_texture/effect_texture.png",
             "typeOfMonster": "[ Fiend / Effect ]",

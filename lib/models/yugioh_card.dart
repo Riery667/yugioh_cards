@@ -9,7 +9,7 @@ class YugiohCard {
   String cardType;
   //what tipe of de monster, and will not be required because exist card with out a attribute
   String attribute;
-  String level;
+  int level;
   String cardImage;
   String backgroundTexture;
   String typeOfMonster;
@@ -22,7 +22,7 @@ class YugiohCard {
     required this.name,
     required this.cardType,
     required this.attribute,
-    this.level = '',
+    this.level = 0,
     required this.cardImage,
     required this.backgroundTexture,
     this.typeOfMonster = '',
@@ -37,7 +37,7 @@ class YugiohCard {
       name: json['name'] ?? '',
       cardType: json['cardType'] ?? '',
       attribute: json['attribute'] ?? '',
-      level: json['level'] ?? '',
+      level: json['level'] ?? 0,
       cardImage: json['cardImage'] ?? '',
       backgroundTexture: json['backgroundTexture'] ?? '',
       typeOfMonster: json['typeOfMonster'] ?? '',

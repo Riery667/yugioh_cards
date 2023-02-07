@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:yugioh_cards/app_assets.dart';
 import 'package:yugioh_cards/models/models.dart';
-import 'package:yugioh_cards/yugioh_theme.dart';
 
 class MonsterCard extends StatelessWidget {
   final YugiohCard card;
@@ -8,6 +8,7 @@ class MonsterCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
     return Stack(
       children: [
         Container(
@@ -30,15 +31,27 @@ class MonsterCard extends StatelessWidget {
                   children: [
                     Padding(
                       padding: const EdgeInsets.fromLTRB(8, 4, 0, 8),
-                      child: Text(card.name,
-                          style: YugiohTheme.lightTextTheme.headline1),
+                      child: RichText(
+                        text: TextSpan(
+                          text: card.name.substring(0, 1),
+                          style: textTheme.headline1,
+                          children: [
+                            TextSpan(
+                              text: card.name.substring(1),
+                              style: textTheme.headline2,
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
                     Container(
                       height: 45,
                       width: 45,
                       decoration: BoxDecoration(
-                          image: DecorationImage(
-                              image: AssetImage(card.attribute))),
+                        image: DecorationImage(
+                          image: AssetImage(card.attribute),
+                        ),
+                      ),
                     )
                   ],
                 ),
@@ -51,17 +64,19 @@ class MonsterCard extends StatelessWidget {
                   color: Colors.white54,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Container(
+                    children: List.generate(
+                      card.level,
+                      (index) => Container(
                         height: 30,
                         width: 25,
-                        decoration: BoxDecoration(
-                            //TODO: ListOfLevel
-                            image: DecorationImage(
-                                image: AssetImage(card.level),
-                                fit: BoxFit.fill)),
-                      )
-                    ],
+                        decoration: const BoxDecoration(
+                          //TODO: ListOfLevel
+                          image: DecorationImage(
+                              image: AssetImage(AppAssets.level),
+                              fit: BoxFit.fill),
+                        ),
+                      ),
+                    ),
                   ),
                 ),
               ),
