@@ -21,6 +21,7 @@ class MonsterCard extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.fromLTRB(22, 16, 22, 8),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Container(
                 height: 50,
@@ -58,10 +59,9 @@ class MonsterCard extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.fromLTRB(0, 4, 20, 4),
-                child: Container(
+                child: SizedBox(
                   height: 25,
-                  width: 500,
-                  color: Colors.white54,
+                  width: 350,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: List.generate(
@@ -70,10 +70,10 @@ class MonsterCard extends StatelessWidget {
                         height: 30,
                         width: 25,
                         decoration: const BoxDecoration(
-                          //TODO: ListOfLevel
                           image: DecorationImage(
-                              image: AssetImage(AppAssets.level),
-                              fit: BoxFit.fill),
+                            image: AssetImage(AppAssets.level),
+                            fit: BoxFit.fill,
+                          ),
                         ),
                       ),
                     ),
@@ -81,9 +81,48 @@ class MonsterCard extends StatelessWidget {
                 ),
               ),
               Container(
-                height: 260,
-                width: 260,
-                color: Colors.black45,
+                height: 230,
+                width: 230,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(
+                      card.cardImage,
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 8),
+                child: Container(
+                  width: double.maxFinite,
+                  height: 100,
+                  color: Colors.black38,
+                  child: Padding(
+                    padding: const EdgeInsets.all(4.0),
+                    child: SizedBox(
+                      height: 90,
+                      width: 90,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(card.typeOfMonster, style: textTheme.bodyText1),
+                          Text(
+                            card.description,
+                            style: textTheme.bodyText2,
+                          ),
+                          Column(
+                            children: [
+                              Row(
+                                children: [Text(card.atk), Text(card.def)],
+                              )
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
               )
             ],
           ),
