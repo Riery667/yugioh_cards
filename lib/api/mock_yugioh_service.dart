@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:yugioh_cards/models/library_card.dart';
 import 'package:yugioh_cards/models/models.dart';
@@ -19,6 +20,14 @@ class MockYugiohService {
 
     if (json['cards'] != null) {
       final cards = <YugiohCard>[];
+      try {
+        json['cards'].forEach((v) {
+          cards.add(YugiohCard.fromJson(v));
+        });
+      } catch (e) {
+        debugPrint('Error to convertion from Json');
+      }
+      
       return cards;
     } else {
       return [];

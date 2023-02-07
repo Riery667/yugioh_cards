@@ -1,6 +1,6 @@
-class CardType {
+class WidgetCardType {
   static const monsterCard = 'monsterCard';
-  static const speelCard = 'spellCard';
+  static const spellCard = 'spellCard';
   static const trapCard = 'trapCard';
 }
 

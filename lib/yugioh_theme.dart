@@ -50,8 +50,9 @@ class YugiohTheme {
       fontWeight: FontWeight.bold,
       color: Colors.black,
     ),
-    headline2: GoogleFonts.openSans(
-      fontSize: 21.0,
+    headline2: const TextStyle(
+      fontFamily: 'Stone Serif',
+      fontSize: 32.0,
       fontWeight: FontWeight.w700,
       color: Colors.black,
     ),
@@ -74,10 +75,11 @@ class YugiohTheme {
       fontWeight: FontWeight.w700,
       color: Colors.white,
     ),
-    headline2: GoogleFonts.openSans(
-      fontSize: 21.0,
+    headline2: const TextStyle(
+      fontFamily: 'Stone Serif',
+      fontSize: 32.0,
       fontWeight: FontWeight.w700,
-      color: Colors.white,
+      color: Colors.black,
     ),
     headline3: GoogleFonts.openSans(
       fontSize: 16.0,
