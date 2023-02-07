@@ -59,7 +59,7 @@ class YugiohTheme {
     //type of monster
     bodyLarge: const TextStyle(
       fontFamily: 'Stone Serif Regular 1',
-      fontSize: 10.0,
+      fontSize: 12.0,
       fontWeight: FontWeight.w900,
       color: Colors.black,
     ),
@@ -70,12 +70,12 @@ class YugiohTheme {
       fontStyle: FontStyle.italic,
       fontSize: 10.0,
       fontWeight: FontWeight.w900,
-      color: Colors.black,
+      color: Color.fromARGB(183, 0, 0, 0),
     ),
     bodySmall: const TextStyle(
       fontFamily: 'Stone Serif Regular 1',
       fontSize: 12.0,
-      fontWeight: FontWeight.w900,
+      fontWeight: FontWeight.w800,
       color: Colors.black,
     ),
     titleLarge: GoogleFonts.openSans(

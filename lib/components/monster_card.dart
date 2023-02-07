@@ -181,14 +181,15 @@ class MonsterCard extends StatelessWidget {
                     ),
                   ],
                 ),
+                //DESCRIPITION CARD
                 Padding(
                   padding: const EdgeInsets.only(top: 8),
                   child: Container(
-                    height: size.height * 0.20,
+                    height: size.height * 0.25,
                     width: size.width * 0.85,
                     color: Colors.white38,
                     child: Padding(
-                      padding: const EdgeInsets.all(4.0),
+                      padding: const EdgeInsets.all(4.0),  
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -205,34 +206,45 @@ class MonsterCard extends StatelessWidget {
                                 Expanded(
                                   child: AutoSizeText(
                                     card.description,
-                                    style: textTheme.bodyMedium,
+                                    style: const TextStyle(fontSize: 12),
+                                    minFontSize: 9,
                                   ),
                                 ),
+                               
                               ],
                             ),
                           ),
                           if (card.cardType == 'monsterCard')
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: [
-                                  Text(
-                                    'ATK/${card.atk}',
-                                    style: textTheme.bodySmall,
-                                  ),
-                                  const SizedBox(
-                                    width: 5,
-                                  ),
-                                  Text(
-                                    'DEF/${card.def}',
-                                    style: textTheme.bodySmall,
-                                  ),
-                                ],
-                              )
-                            ],
-                          )
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                const Divider(
+                                  height: 1,
+                                  color: Colors.black,
+                                ),
+                                Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Row(
+                                      mainAxisAlignment: MainAxisAlignment.end,
+                                      children: [
+                                        Text(
+                                          'ATK/${card.atk}',
+                                          style: textTheme.bodySmall,
+                                        ),
+                                        const SizedBox(
+                                          width: 5,
+                                        ),
+                                        Text(
+                                          'DEF/${card.def}',
+                                          style: textTheme.bodySmall,
+                                        ),
+                                      ],
+                                    )
+                                  ],
+                                )
+                              ],
+                            ),
                         ],
                       ),
                     ),
