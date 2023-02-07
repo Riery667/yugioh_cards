@@ -31,9 +31,9 @@ class MonsterCard extends StatelessWidget {
                 Container(
                   height: size.height * 0.10,
                   width: double.maxFinite,
-                  color: Colors.black45,
+                  color: Colors.white54,
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Padding(
                         padding: const EdgeInsets.fromLTRB(8, 4, 0, 8),
@@ -51,8 +51,8 @@ class MonsterCard extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        height: 45,
-                        width: 45,
+                        height: size.height * 0.20,
+                        width: size.width * 0.20,
                         decoration: BoxDecoration(
                           image: DecorationImage(
                             image: AssetImage(card.attribute),
@@ -65,19 +65,22 @@ class MonsterCard extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(0, 4, 4, 4),
                   child: SizedBox(
-                    height: 25,
-                    width: double.maxFinite,
+                    height: size.height * 0.04,
+                    width: size.width,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: List.generate(
                         card.level,
-                        (index) => Container(
-                          height: 20,
-                          width: 20,
-                          decoration: const BoxDecoration(
-                            image: DecorationImage(
-                              image: AssetImage(AppAssets.level),
-                              fit: BoxFit.fill,
+                        (index) => Padding(
+                          padding: const EdgeInsets.fromLTRB(1, 0, 1, 0),
+                          child: Container(
+                            height: 20,
+                            width: 20,
+                            decoration: const BoxDecoration(
+                              image: DecorationImage(
+                                image: AssetImage(AppAssets.level),
+                                fit: BoxFit.fill,
+                              ),
                             ),
                           ),
                         ),
@@ -85,76 +88,92 @@ class MonsterCard extends StatelessWidget {
                     ),
                   ),
                 ),
-                Container(
-                  height: 220,
-                  width: 220,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
+                SizedBox(
+                  height: size.height * 0.5,
+                  width: size.width * 0.78,
+                  child: Positioned.fill(
+                      child: DecoratedBox(
+                    decoration: BoxDecoration(
+                      border: const Border(
+                        top: BorderSide(
+                          width: 6,
+                          color: Colors.white38,
+                        ),
+                        left: BorderSide(
+                          width: 6,
+                          color: Colors.white54,
+                        ),
+                        bottom: BorderSide(
+                          width: 6,
+                          color: Colors.black45,
+                        ),
+                        right: BorderSide(
+                          width: 6,
+                          color: Colors.black54,
+                        ),
+                      ),
+                      image: DecorationImage(
                         image: AssetImage(
                           card.cardImage,
                         ),
-                        fit: BoxFit.fill),
-                  ),
+                      ),
+                    ),
+                  )),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 8),
                   child: Container(
-                    width: double.maxFinite,
-                    height: 150,
+                    height: size.height * 0.20,
+                    width: size.width * 0.85,
                     color: Colors.white38,
                     child: Padding(
                       padding: const EdgeInsets.all(4.0),
-                      child: Container(
-                        color: Colors.black54,
-                        height: 90,
-                        width: 90,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Expanded(
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    card.typeOfMonster,
-                                    style: textTheme.bodyLarge,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Expanded(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  card.typeOfMonster,
+                                  style: textTheme.bodyLarge,
+                                ),
+                                Expanded(
+                                  child: AutoSizeText(
+                                    card.description,
+                                    style: textTheme.bodyMedium,
                                   ),
-                                  Expanded(
-                                    child: AutoSizeText(
-                                      card.description,
-                                      style: textTheme.bodyMedium,
-                                    ),
-                                  ),
-                                ],
-                              ),
+                                ),
+                              ],
                             ),
-                            Container(
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.end,
-                                    children: [
-                                      Text(
-                                        'ATK/${card.atk}',
-                                        style: textTheme.bodySmall,
-                                      ),
-                                      const SizedBox(
-                                        width: 5,
-                                      ),
-                                      Text(
-                                        'DEF/${card.def}',
-                                        style: textTheme.bodySmall,
-                                      ),
-                                    ],
-                                  )
-                                ],
-                              ),
-                            )
-                          ],
-                        ),
+                          ),
+                          Container(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  children: [
+                                    Text(
+                                      'ATK/${card.atk}',
+                                      style: textTheme.bodySmall,
+                                    ),
+                                    const SizedBox(
+                                      width: 5,
+                                    ),
+                                    Text(
+                                      'DEF/${card.def}',
+                                      style: textTheme.bodySmall,
+                                    ),
+                                  ],
+                                )
+                              ],
+                            ),
+                          )
+                        ],
                       ),
                     ),
                   ),
