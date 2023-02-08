@@ -60,23 +60,28 @@ class YugiohTheme {
     //type of monster
     bodyLarge: const TextStyle(
       fontFamily: 'Stone Serif Regular 1',
+      fontSize: 12.0,
+      fontWeight: FontWeight.w900,
+      color: Colors.black,
+    ),
+    displaySmall: const TextStyle(
+      fontFamily: 'Stone Serif Regular 1',
       fontSize: 10.0,
       fontWeight: FontWeight.w900,
       color: Colors.black,
     ),
-
     //card lore
     bodyMedium: const TextStyle(
       fontFamily: 'Stone Serif',
       fontStyle: FontStyle.italic,
       fontSize: 10.0,
       fontWeight: FontWeight.w900,
-      color: Colors.black,
+      color: Color.fromARGB(183, 0, 0, 0),
     ),
     bodySmall: const TextStyle(
       fontFamily: 'Stone Serif Regular 1',
       fontSize: 12.0,
-      fontWeight: FontWeight.w900,
+      fontWeight: FontWeight.w800,
       color: Colors.black,
     ),
     titleLarge: GoogleFonts.openSans(
@@ -84,6 +89,7 @@ class YugiohTheme {
       fontWeight: FontWeight.w600,
       color: Colors.black,
     ),
+
   );
 
   static TextTheme darkTextTheme = TextTheme(
@@ -152,3 +158,59 @@ class YugiohTheme {
     );
   }
 }
+
+//TODO SEM LEVEL
+//  if (card.cardType != 'monsterCard')
+//                       Padding(
+//                         padding: const EdgeInsets.fromLTRB(0, 4, 4, 4),
+//                         child: Column(
+//                           children: [
+//                             SizedBox(
+//                               height: size.height * 0.04,
+//                               width: size.width,
+//                               child: Expanded(
+//                                 child: AutoSizeText.rich(
+//                                   TextSpan(
+//                                       text:
+//                                           card.noLevelSubTittle.substring(0, 1),
+//                                       style: textTheme.bodyLarge,
+//                                       children: [
+//                                         TextSpan(
+//                                             text: card.noLevelSubTittle
+//                                                 .substring(1),
+//                                             style: textTheme.displaySmall)
+//                                       ]),
+//                                 ),
+//                               ),
+//                             ),
+//                           ],
+//                         ),
+//                       ),
+
+//TODO LEVEL
+// Padding(
+//                       padding: const EdgeInsets.fromLTRB(0, 4, 4, 4),
+//                       child: SizedBox(
+//                         height: size.height * 0.04,
+//                         width: size.width,
+//                         child: Row(
+//                           mainAxisAlignment: MainAxisAlignment.end,
+//                           children: List.generate(
+//                             card.level,
+//                             (index) => Padding(
+//                               padding: const EdgeInsets.fromLTRB(1, 0, 1, 0),
+//                               child: Container(
+//                                 height: 20,
+//                                 width: 20,
+//                                 decoration: const BoxDecoration(
+//                                   image: DecorationImage(
+//                                     image: AssetImage(AppAssets.level),
+//                                     fit: BoxFit.fill,
+//                                   ),
+//                                 ),
+//                               ),
+//                             ),
+//                           ),
+//                         ),
+//                       ),
+//                     ),

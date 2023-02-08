@@ -1,6 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:yugioh_cards/app_assets.dart';
 import 'package:yugioh_cards/models/models.dart';
 
 class MonsterCard extends StatelessWidget {
@@ -117,6 +116,7 @@ class MonsterCard extends StatelessWidget {
                     SizedBox(
                       height: size.height * 0.5,
                       width: size.width * 0.78,
+
                       child: Positioned.fill(
                           child: DecoratedBox(
                         decoration: BoxDecoration(
@@ -178,19 +178,15 @@ class MonsterCard extends StatelessWidget {
                               ),
                             ),
                           ),
-                        ),
+                        )),
                       ),
                     ),
                   ],
                 ),
-                Container(
-                  color: Colors.amber,
-                  height: size.height * 0.04,
-                ),
                 Padding(
                   padding: const EdgeInsets.only(top: 8),
                   child: Container(
-                    height: size.height * 0.20,
+                    height: size.height * 0.25,
                     width: size.width * 0.85,
                     color: Colors.white38,
                     child: Padding(
@@ -211,34 +207,44 @@ class MonsterCard extends StatelessWidget {
                                 Expanded(
                                   child: AutoSizeText(
                                     card.description,
-                                    style: textTheme.bodyMedium,
+                                    style: const TextStyle(fontSize: 12),
+                                    minFontSize: 9,
                                   ),
                                 ),
                               ],
                             ),
                           ),
                           if (card.cardType == 'monsterCard')
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: [
-                                  Text(
-                                    'ATK/${card.atk}',
-                                    style: textTheme.bodySmall,
-                                  ),
-                                  const SizedBox(
-                                    width: 5,
-                                  ),
-                                  Text(
-                                    'DEF/${card.def}',
-                                    style: textTheme.bodySmall,
-                                  ),
-                                ],
-                              )
-                            ],
-                          )
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                const Divider(
+                                  height: 1,
+                                  color: Colors.black,
+                                ),
+                                Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Row(
+                                      mainAxisAlignment: MainAxisAlignment.end,
+                                      children: [
+                                        Text(
+                                          'ATK/${card.atk}',
+                                          style: textTheme.bodySmall,
+                                        ),
+                                        const SizedBox(
+                                          width: 5,
+                                        ),
+                                        Text(
+                                          'DEF/${card.def}',
+                                          style: textTheme.bodySmall,
+                                        ),
+                                      ],
+                                    )
+                                  ],
+                                )
+                              ],
+                            ),
                         ],
                       ),
                     ),
