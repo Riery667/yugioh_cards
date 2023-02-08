@@ -98,7 +98,7 @@ flutter:
       fonts:
         - asset: assets/fonts/stone_serif_semibold.ttf
         - asset: assets/fonts/yugioh_itc_stone_serif_lt_ italic.ttf
-          style: italic
+          
 
      
    
