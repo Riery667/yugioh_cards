@@ -89,7 +89,7 @@
             "description": "Draw 2 cards.",
             "atk": "",
             "def": "",
-            "noLevelSubTittle": null
+            "noLevelSubTittle": "[SPELL CARD]"
         }
     ]
 }
