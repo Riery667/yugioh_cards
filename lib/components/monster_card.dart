@@ -26,7 +26,7 @@ class MonsterCard extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.fromLTRB(22, 16, 22, 8),
+            padding: const EdgeInsets.all(8),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -62,33 +62,36 @@ class MonsterCard extends StatelessWidget {
                     children: [
                       Expanded(
                         child: Padding(
-                          padding: const EdgeInsets.fromLTRB(8, 4, 0, 8),
-                          child: AutoSizeText.rich(
-                            TextSpan(
-                              text: cardNames[0].substring(0, 1),
-                              style: textTheme.displayLarge,
-                              children: [
-                                TextSpan(
-                                  text: "${cardNames[0].substring(1)} ",
-                                  style: textTheme.displayMedium,
-                                ),
-                                if (cardNames.length > 1)
-                                  ...List.generate(
-                                    cardNames.length - 1,
-                                    (index) => TextSpan(
-                                      text:
-                                          cardNames[index + 1].substring(0, 1),
-                                      style: textTheme.displayLarge,
-                                      children: [
-                                        TextSpan(
-                                          text:
-                                              "${cardNames[index + 1].substring(1)} ",
-                                          style: textTheme.displayMedium,
-                                        ),
-                                      ],
-                                    ),
-                                  )
-                              ],
+                          padding: const EdgeInsets.fromLTRB(8, 4, 0, 2),
+                          child: Expanded(
+                            child: AutoSizeText.rich(
+                              minFontSize: 7,
+                              TextSpan(
+                                text: cardNames[0].substring(0, 1),
+                                style: textTheme.displayLarge,
+                                children: [
+                                  TextSpan(
+                                    text: "${cardNames[0].substring(1)} ",
+                                    style: textTheme.displayMedium,
+                                  ),
+                                  if (cardNames.length > 1)
+                                    ...List.generate(
+                                      cardNames.length - 1,
+                                      (index) => TextSpan(
+                                        text: cardNames[index + 1]
+                                            .substring(0, 1),
+                                        style: textTheme.displayLarge,
+                                        children: [
+                                          TextSpan(
+                                            text:
+                                                "${cardNames[index + 1].substring(1)} ",
+                                            style: textTheme.displayMedium,
+                                          ),
+                                        ],
+                                      ),
+                                    )
+                                ],
+                              ),
                             ),
                           ),
                         ),
@@ -115,7 +118,7 @@ class MonsterCard extends StatelessWidget {
                   children: [
                     //card image
                     SizedBox(
-                     height: size.height * 0.50,
+                      height: size.height * 0.50,
                       width: size.width * 0.83,
                       child: Positioned.fill(
                           child: DecoratedBox(
@@ -123,25 +126,25 @@ class MonsterCard extends StatelessWidget {
                           boxShadow: [
                             BoxShadow(
                               color: Colors.grey.shade900,
-                              spreadRadius: 8,
-                              blurRadius: 12,
+                              spreadRadius: 5,
+                              blurRadius: 20,
                             ),
                           ],
                           border: const Border(
                             top: BorderSide(
-                              width: 6,
+                              width: 3,
                               color: Colors.white38,
                             ),
                             left: BorderSide(
-                              width: 6,
+                              width: 3,
                               color: Colors.white54,
                             ),
                             bottom: BorderSide(
-                              width: 6,
+                              width: 3,
                               color: Colors.black45,
                             ),
                             right: BorderSide(
-                              width: 6,
+                              width: 3,
                               color: Colors.black54,
                             ),
                           ),
@@ -155,19 +158,19 @@ class MonsterCard extends StatelessWidget {
                       )),
                     ),
                     Padding(
-                      padding: const EdgeInsets.fromLTRB(0, 4, 4, 4),
+                      padding: const EdgeInsets.fromLTRB(0, 4, 4, 6),
                       child: SizedBox(
                         height: size.height * 0.04,
-                        width: size.width,
+                        width: size.width * 0.85,
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: List.generate(
                             card.level,
                             (index) => Padding(
-                              padding: const EdgeInsets.fromLTRB(1, 0, 1, 0),
+                              padding: const EdgeInsets.fromLTRB(1, 0, 2, 0),
                               child: Container(
-                                height: 20,
-                                width: 20,
+                                height: size.height * 0.05,
+                                width: size.width * 0.06,
                                 decoration: const BoxDecoration(
                                   image: DecorationImage(
                                     image: AssetImage(AppAssets.level),
@@ -183,13 +186,13 @@ class MonsterCard extends StatelessWidget {
                   ],
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 8),
+                  padding: const EdgeInsets.only(top: 10),
                   child: Container(
                     height: size.height * 0.25,
-                    width: size.width * 0.85,
+                    width: size.width,
                     color: Colors.white38,
                     child: Padding(
-                      padding: const EdgeInsets.all(4.0),
+                      padding: const EdgeInsets.fromLTRB(2, 0, 2, 0),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -199,15 +202,18 @@ class MonsterCard extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(
-                                  card.typeOfMonster,
-                                  style: textTheme.bodyLarge,
+                                SizedBox(
+                                  child: AutoSizeText(
+                                    card.typeOfMonster,
+                                    style: textTheme.bodyLarge,
+                                    minFontSize: 4,
+                                  ),
                                 ),
                                 Expanded(
                                   child: AutoSizeText(
                                     card.description,
-                                    style: const TextStyle(fontSize: 12),
-                                    minFontSize: 9,
+                                    style: textTheme.bodyMedium,
+                                    minFontSize: 6,
                                   ),
                                 ),
                               ],
@@ -216,6 +222,7 @@ class MonsterCard extends StatelessWidget {
                           if (card.cardType == 'monsterCard')
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.end,
+                              mainAxisAlignment: MainAxisAlignment.end,
                               children: [
                                 const Divider(
                                   height: 1,
@@ -228,14 +235,14 @@ class MonsterCard extends StatelessWidget {
                                       mainAxisAlignment: MainAxisAlignment.end,
                                       children: [
                                         Text(
-                                          'ATK/${card.atk}',
+                                          'ATK/    ${card.atk}',
                                           style: textTheme.bodySmall,
                                         ),
                                         const SizedBox(
                                           width: 5,
                                         ),
                                         Text(
-                                          'DEF/${card.def}',
+                                          'DEF/    ${card.def}',
                                           style: textTheme.bodySmall,
                                         ),
                                       ],

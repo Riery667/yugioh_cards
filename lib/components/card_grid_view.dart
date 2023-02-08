@@ -14,7 +14,7 @@ class CardGridView extends StatelessWidget {
       child: GridView.builder(
         itemCount: cards.length,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 3, childAspectRatio: 3.1 / 4.6),
+            crossAxisCount: 5, childAspectRatio: 3.1 / 4.6),
         itemBuilder: (context, index) {
           final simpleCard = cards[index];
           return Padding(
