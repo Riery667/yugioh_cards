@@ -154,8 +154,6 @@ class MonsterCard extends StatelessWidget {
                         )),
                       ),
                     ),
-                    
-                   
                   ],
                 ),
                 //DESCRIPITION CARD
@@ -166,7 +164,7 @@ class MonsterCard extends StatelessWidget {
                     width: size.width * 0.85,
                     color: Colors.white38,
                     child: Padding(
-                      padding: const EdgeInsets.all(4.0),  
+                      padding: const EdgeInsets.all(4.0),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -187,7 +185,6 @@ class MonsterCard extends StatelessWidget {
                                     minFontSize: 9,
                                   ),
                                 ),
-                               
                               ],
                             ),
                           ),
