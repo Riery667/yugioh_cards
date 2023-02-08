@@ -146,6 +146,7 @@ class MonsterCard extends StatelessWidget {
                             ),
                           ),
                           image: DecorationImage(
+                            fit: BoxFit.cover,
                             image: AssetImage(
                               card.cardImage,
                             ),
@@ -153,6 +154,7 @@ class MonsterCard extends StatelessWidget {
                         ),
                       )),
                     ),
+                    
                     Padding(
                       padding: const EdgeInsets.fromLTRB(0, 4, 4, 4),
                       child: SizedBox(
@@ -180,6 +182,10 @@ class MonsterCard extends StatelessWidget {
                       ),
                     ),
                   ],
+                ),
+                Container(
+                  color: Colors.amber,
+                  height: size.height * 0.04,
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 8),

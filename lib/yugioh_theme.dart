@@ -44,15 +44,16 @@ class YugiohTheme {
     displayLarge: const TextStyle(
       fontFamily: 'Matrix Regular 1',
       fontSize: 32.0,
-      fontWeight: FontWeight.w700,
+      fontWeight: FontWeight.w600,
       color: Colors.black,
     ),
 
     //Tittle second + letter
     displayMedium: const TextStyle(
       fontFamily: 'Matrix Regular 1',
+      
       fontSize: 24.0,
-      fontWeight: FontWeight.w700,
+      fontWeight: FontWeight.w600,
       color: Colors.black,
     ),
 
