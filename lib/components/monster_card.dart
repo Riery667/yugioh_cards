@@ -115,7 +115,7 @@ class MonsterCard extends StatelessWidget {
                   children: [
                     //card image
                     SizedBox(
-                      height: size.height * 0.50,
+                     height: size.height * 0.50,
                       width: size.width * 0.83,
                       child: Positioned.fill(
                           child: DecoratedBox(
@@ -182,7 +182,6 @@ class MonsterCard extends StatelessWidget {
                     ),
                   ],
                 ),
-                //DESCRIPITION CARD
                 Padding(
                   padding: const EdgeInsets.only(top: 8),
                   child: Container(
