@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:yugioh_cards/app_assets.dart';
 import 'package:yugioh_cards/models/models.dart';
 
 class MonsterCard extends StatelessWidget {
@@ -114,44 +115,69 @@ class MonsterCard extends StatelessWidget {
                   children: [
                     //card image
                     SizedBox(
-                      height: size.height * 0.5,
-                      width: size.width * 0.78,
-                      child: Expanded(
-                        child: Positioned.fill(
-                            child: DecoratedBox(
-                          decoration: BoxDecoration(
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey.shade900,
-                                spreadRadius: 8,
-                                blurRadius: 12,
-                              ),
-                            ],
-                            border: const Border(
-                              top: BorderSide(
-                                width: 6,
-                                color: Colors.white38,
-                              ),
-                              left: BorderSide(
-                                width: 6,
-                                color: Colors.white54,
-                              ),
-                              bottom: BorderSide(
-                                width: 6,
-                                color: Colors.black45,
-                              ),
-                              right: BorderSide(
-                                width: 6,
-                                color: Colors.black54,
-                              ),
+                      height: size.height * 0.50,
+                      width: size.width * 0.83,
+                      child: Positioned.fill(
+                          child: DecoratedBox(
+                        decoration: BoxDecoration(
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.shade900,
+                              spreadRadius: 8,
+                              blurRadius: 12,
                             ),
-                            image: DecorationImage(
-                              image: AssetImage(
-                                card.cardImage,
+                          ],
+                          border: const Border(
+                            top: BorderSide(
+                              width: 6,
+                              color: Colors.white38,
+                            ),
+                            left: BorderSide(
+                              width: 6,
+                              color: Colors.white54,
+                            ),
+                            bottom: BorderSide(
+                              width: 6,
+                              color: Colors.black45,
+                            ),
+                            right: BorderSide(
+                              width: 6,
+                              color: Colors.black54,
+                            ),
+                          ),
+                          image: DecorationImage(
+                            fit: BoxFit.cover,
+                            image: AssetImage(
+                              card.cardImage,
+                            ),
+                          ),
+                        ),
+                      )),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(0, 4, 4, 4),
+                      child: SizedBox(
+                        height: size.height * 0.04,
+                        width: size.width,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: List.generate(
+                            card.level,
+                            (index) => Padding(
+                              padding: const EdgeInsets.fromLTRB(1, 0, 1, 0),
+                              child: Container(
+                                height: 20,
+                                width: 20,
+                                decoration: const BoxDecoration(
+                                  image: DecorationImage(
+                                    image: AssetImage(AppAssets.level),
+                                    fit: BoxFit.fill,
+                                  ),
+                                ),
                               ),
                             ),
                           ),
-                        )),
+                        ),
                       ),
                     ),
                   ],
