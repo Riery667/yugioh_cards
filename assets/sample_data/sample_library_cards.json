@@ -7,14 +7,14 @@
             "level": 2,
             "cardImage": "assets/card_pics/kuriboh.jpg",
             "backgroundTexture": "assets/card_texture/effect_texture.png",
-            "typeOfMonster": "[ FRIEND / EFFECT ]",
+            "typeOfMonster": "[ FIEND / EFFECT ]",
             "description": "During damage calculation, if your opponent's monster attacks (Quick Effect): You can discard this card; you take no battle damage from that battle.",
             "atk": "300",
             "def": "200",
             "noLevelSubTittle": null
         },
         {
-            "name": "Dark Magician Girl",
+            "name": "DARK MAGICIAN GIRL",
             "cardType": "monsterCard",
             "attribute": "assets/attribute_icons/dark.png",
             "level": 6,
@@ -27,7 +27,7 @@
             "noLevelSubTittle": null
         },
         {
-            "name": "Meteor Black Dragon",
+            "name": "METEOR BLACK DRAGON",
             "cardType": "monsterCard",
             "attribute": "assets/attribute_icons/fire.png",
             "level": 8,
@@ -40,7 +40,7 @@
             "noLevelSubTittle": null
         },
         {
-            "name": "Blue-Eyes White Dragon",
+            "name": "BLUE-EYES WHITE DRAGON",
             "cardType": "monsterCard",
             "attribute": "assets/attribute_icons/light.png",
             "level": 8,
@@ -53,12 +53,12 @@
             "noLevelSubTittle": null
         },
         {
-            "name": "Slifer the Sky Dragon",
+            "name": "SLIFER THE SKY DRAGON",
             "cardType": "monsterCard",
             "attribute": "assets/attribute_icons/divine.png",
             "level": 10,
             "cardImage": "assets/card_pics/slifer.jpg",
-            "backgroundTexture": "assets/card_texture/effect_texture.png",
+            "backgroundTexture": "assets/card_texture/slifer_texture.png",
             "typeOfMonster": "[ DIVINE-BEAST / EFFECT ]",
             "description": "Requires 3 Tributes to Normal Summon (cannot be Normal Set). This card's Normal Summon cannot be negated. When Normal Summoned, cards and effects cannot be activated. Once per turn, during the End Phase, if this card was Special Summoned: Send it to the GY. Gains 1000 ATK/DEF for each card in your hand. If a monster(s) is Normal or Special Summoned to your opponent's field in Attack Position: That monster(s) loses 2000 ATK, then if its ATK has been reduced to 0 as a result, destroy it.",
             "atk": "?",
@@ -66,12 +66,12 @@
             "noLevelSubTittle": null
         },
         {
-            "name": "Obelisk the Tormentor",
+            "name": "OBELISK THE TORMENTOR",
             "cardType": "monsterCard",
             "attribute": "assets/attribute_icons/divine.png",
             "level": 10,
             "cardImage": "assets/card_pics/obelisk.jpg",
-            "backgroundTexture": "assets/card_texture/effect_texture.png",
+            "backgroundTexture": "assets/card_texture/obelisk_texture.png",
             "typeOfMonster": "[ DIVINE-BEAST / EFFECT ]",
             "description": "Requires 3 Tributes to Normal Summon (cannot be Normal Set). This card's Normal Summon cannot be negated. When Normal Summoned, cards and effects cannot be activated. Neither player can target this card with card effects. Once per turn, during the End Phase, if this card was Special Summoned: Send it to the GY. You can Tribute 2 monsters; destroy all monsters your opponent controls. This card cannot declare an attack the turn this effect is activated.",
             "atk": "4000",
@@ -79,7 +79,7 @@
             "noLevelSubTittle": null
         },
         {
-            "name": "Pot of Greed",
+            "name": "POT OF GREED",
             "cardType": "spellCard",
             "attribute": "assets/attribute_icons/divine.png",
             "level": 0,
@@ -87,6 +87,19 @@
             "backgroundTexture": "assets/card_texture/spell_texture.png",
             "typeOfMonster": "[ DIVINE-BEAST / EFFECT ]",
             "description": "Draw 2 cards.",
+            "atk": "",
+            "def": "",
+            "noLevelSubTittle": "[SPELL CARD]"
+        },
+        {
+            "name": "CONVERING FIRE",
+            "cardType": "trapCard",
+            "attribute": "assets/attribute_icons/dark.png",
+            "level": 0,
+            "cardImage": "assets/card_pics/convering_fire.jpg",
+            "backgroundTexture": "assets/card_texture/trap_texture.png",
+            "typeOfMonster": "[TRAP CARD]",
+            "description": "During the Damage Step, if an opponent's monster attacks your monster: Target 1 other face-up monster you control; your attacked monster gains ATK equal to that target's ATK, during the Damage Step only.",
             "atk": "",
             "def": "",
             "noLevelSubTittle": "[SPELL CARD]"

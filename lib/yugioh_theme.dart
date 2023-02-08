@@ -38,58 +38,46 @@ class YugiohTheme {
 //     ),
 //   );
 
-  static TextTheme lightTextTheme = TextTheme(
+  static TextTheme lightTextTheme = const TextTheme(
 
     //Tittle fist letter
-    displayLarge: const TextStyle(
+    displayLarge: TextStyle(
       fontFamily: 'Matrix Regular 1',
-      fontSize: 32.0,
-      fontWeight: FontWeight.w600,
+      fontStyle: FontStyle.normal,
+      letterSpacing: 0.5,
+      fontSize: 34.0,
+      fontWeight: FontWeight.w900,
       color: Colors.black,
     ),
-
     //Tittle second + letter
-    displayMedium: const TextStyle(
-      fontFamily: 'Matrix Regular 1',
-      
-      fontSize: 24.0,
-      fontWeight: FontWeight.w600,
-      color: Colors.black,
+    displayMedium: TextStyle(
+        fontFamily: 'Matrix Regular 1',
+        fontStyle: FontStyle.normal,
+        fontSize: 24.0,
+        fontWeight: FontWeight.w900,
+        color: Colors.black
     ),
-
     //type of monster
-    bodyLarge: const TextStyle(
-      fontFamily: 'Stone Serif Regular 1',
-      fontSize: 12.0,
-      fontWeight: FontWeight.w900,
-      color: Colors.black,
-    ),
-    displaySmall: const TextStyle(
+    bodyLarge: TextStyle(
       fontFamily: 'Stone Serif Regular 1',
       fontSize: 10.0,
       fontWeight: FontWeight.w900,
-      color: Colors.black,
+        color: Colors.black
     ),
-    //card lore
-    bodyMedium: const TextStyle(
+    //description
+    bodyMedium: TextStyle(
       fontFamily: 'Stone Serif',
-      fontStyle: FontStyle.italic,
+      fontSize: 12,
+      fontWeight: FontWeight.w800,
+      color: Color.fromARGB(167, 0, 0, 0),
+    ),
+    //ATK E DEF
+    bodySmall: TextStyle(
+        fontFamily: 'Stone Serif Regular 1',
       fontSize: 10.0,
       fontWeight: FontWeight.w900,
-      color: Color.fromARGB(183, 0, 0, 0),
+        color: Colors.black
     ),
-    bodySmall: const TextStyle(
-      fontFamily: 'Stone Serif Regular 1',
-      fontSize: 12.0,
-      fontWeight: FontWeight.w800,
-      color: Colors.black,
-    ),
-    titleLarge: GoogleFonts.openSans(
-      fontSize: 20.0,
-      fontWeight: FontWeight.w600,
-      color: Colors.black,
-    ),
-
   );
 
   static TextTheme darkTextTheme = TextTheme(
