@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:yugioh_cards/api/mock_yugioh_service.dart';
 import 'package:yugioh_cards/models/library_card.dart';
 
-import '../components/card_list_view.dart';
+import '../components/card_grid_view.dart';
 
-class LibratyCardScreen extends StatelessWidget {
+class LibraryCardScreen extends StatelessWidget {
   final mockService = MockYugiohService();
 
-  LibratyCardScreen({super.key});
+  LibraryCardScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class LibratyCardScreen extends StatelessWidget {
         future: mockService.getLibraryCard(),
         builder: (context, AsyncSnapshot<LibratyCard> snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
-            return CardListView(cards: snapshot.data?.cards ?? []);
+            return CardGridView(cards: snapshot.data?.cards ?? []);
             // return Container(
             //   color: Colors.green,
             // );

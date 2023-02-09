@@ -37,6 +37,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   google_fonts: ^4.0.3
+  auto_size_text: ^3.0.0
 
 dev_dependencies:
   flutter_test:
@@ -81,16 +82,27 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: Matrix
+    - family: Matrix Book
       fonts:
         - asset: assets/fonts/yugioh_matrix_book.ttf
+    - family:  Matrix Regular 1
+      fonts:
         - asset: assets/fonts/yugioh_matrix_regular_small_caps_1.ttf
+    - family: Matrix Regular 2
+      fonts:
         - asset: assets/fonts/yugioh_matrix_regular_small_caps_2.ttf
+    - family: Stone Serif Regular 1
+      fonts: 
+        - asset: assets/fonts/yugioh_itc_stone_serif_small_caps_bold.ttf
     - family: Stone Serif
       fonts:
         - asset: assets/fonts/stone_serif_semibold.ttf
         - asset: assets/fonts/yugioh_itc_stone_serif_lt_ italic.ttf
-        - asset: assets/fonts/yugioh_itc_stone_serif_small_caps_bold.ttf
+          
+
+     
+   
+   
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
