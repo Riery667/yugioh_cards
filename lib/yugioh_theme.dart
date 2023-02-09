@@ -37,6 +37,13 @@ class YugiohTheme {
       fontWeight: FontWeight.w900,
         color: Colors.black
     ),
+    displaySmall: TextStyle(
+      fontFamily: 'Stone Serif',
+      fontSize: 12,
+      fontStyle: FontStyle.italic,
+      fontWeight: FontWeight.w800,
+      color: Color.fromARGB(167, 0, 0, 0),
+    ),
   );
   static TextTheme lightTextTheme = const TextTheme(
     displayLarge: TextStyle(

@@ -214,10 +214,23 @@ class DisplayCard extends StatelessWidget {
                                     minFontSize: 4,
                                   ),
                                 ),
+                                if (card.backgroundTexture !=
+                                    'assets/card_texture/normal_texture.png')
                                 Expanded(
                                   child: AutoSizeText(
                                     card.description,
                                     style: YugiohTheme.cardTextTheme.bodyMedium,
+                                      minFontSize: 5,
+                                    ),
+                                  ),
+                                if (card.backgroundTexture ==
+                                    'assets/card_texture/normal_texture.png')
+                                  Expanded(
+                                    child: AutoSizeText(
+                                      card.description,
+                                      style: YugiohTheme
+                                          .cardTextTheme.displaySmall,
+
                                     minFontSize: 5,
                                   ),
                                 ),
