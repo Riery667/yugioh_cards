@@ -2,16 +2,18 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:yugioh_cards/app_assets.dart';
 import 'package:yugioh_cards/models/models.dart';
+import 'package:yugioh_cards/yugioh_theme.dart';
 
-class MonsterCard extends StatelessWidget {
+class DisplayCard extends StatelessWidget {
   final YugiohCard card;
-  const MonsterCard({super.key, required this.card});
+  const DisplayCard({super.key, required this.card});
 
   @override
   Widget build(BuildContext context) {
     final cardNames = card.name.split(' ');
 
     final textTheme = Theme.of(context).textTheme;
+
     return LayoutBuilder(builder: (context, BoxConstraints bc) {
       final size = bc.biggest;
       return Stack(
@@ -68,11 +70,12 @@ class MonsterCard extends StatelessWidget {
                               minFontSize: 7,
                               TextSpan(
                                 text: cardNames[0].substring(0, 1),
-                                style: textTheme.displayLarge,
+                                style: YugiohTheme.cardTextTheme.displayLarge,
                                 children: [
                                   TextSpan(
                                     text: "${cardNames[0].substring(1)} ",
-                                    style: textTheme.displayMedium,
+                                    style:
+                                        YugiohTheme.cardTextTheme.displayMedium,
                                   ),
                                   if (cardNames.length > 1)
                                     ...List.generate(
@@ -80,12 +83,14 @@ class MonsterCard extends StatelessWidget {
                                       (index) => TextSpan(
                                         text: cardNames[index + 1]
                                             .substring(0, 1),
-                                        style: textTheme.displayLarge,
+                                        style: YugiohTheme
+                                            .cardTextTheme.displayLarge,
                                         children: [
                                           TextSpan(
                                             text:
                                                 "${cardNames[index + 1].substring(1)} ",
-                                            style: textTheme.displayMedium,
+                                            style: YugiohTheme
+                                                .cardTextTheme.displayMedium,
                                           ),
                                         ],
                                       ),
@@ -167,10 +172,10 @@ class MonsterCard extends StatelessWidget {
                           children: List.generate(
                             card.level,
                             (index) => Padding(
-                              padding: const EdgeInsets.fromLTRB(1, 0, 2, 0),
+                              padding: const EdgeInsets.fromLTRB(1, 0, 1, 0),
                               child: Container(
-                                height: size.height * 0.05,
-                                width: size.width * 0.06,
+                                height: size.height * 0.07,
+                                width: size.width * 0.07,
                                 decoration: const BoxDecoration(
                                   image: DecorationImage(
                                     image: AssetImage(AppAssets.level),
@@ -205,15 +210,15 @@ class MonsterCard extends StatelessWidget {
                                 SizedBox(
                                   child: AutoSizeText(
                                     card.typeOfMonster,
-                                    style: textTheme.bodyLarge,
+                                    style: YugiohTheme.cardTextTheme.bodyLarge,
                                     minFontSize: 4,
                                   ),
                                 ),
                                 Expanded(
                                   child: AutoSizeText(
                                     card.description,
-                                    style: textTheme.bodyMedium,
-                                    minFontSize: 6,
+                                    style: YugiohTheme.cardTextTheme.bodyMedium,
+                                    minFontSize: 5,
                                   ),
                                 ),
                               ],
@@ -236,14 +241,16 @@ class MonsterCard extends StatelessWidget {
                                       children: [
                                         Text(
                                           'ATK/    ${card.atk}',
-                                          style: textTheme.bodySmall,
+                                          style: YugiohTheme
+                                              .cardTextTheme.bodySmall,
                                         ),
                                         const SizedBox(
                                           width: 5,
                                         ),
                                         Text(
                                           'DEF/    ${card.def}',
-                                          style: textTheme.bodySmall,
+                                          style: YugiohTheme
+                                              .cardTextTheme.bodySmall,
                                         ),
                                       ],
                                     )

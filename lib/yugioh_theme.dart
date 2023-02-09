@@ -1,45 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class YugiohTheme {
-//   static TextTheme lightTextTheme = TextTheme(
-//   //Usage: typing card names
-//     headline1: const TextStyle(
-//       fontFamily: 'Matrix',
-//       fontSize: 32.0,
-//       fontWeight: FontWeight.bold,
-//       color: Colors.black,
-//       ),
-// //Usage: typing monster Attributes, Types and Spell/Trap properties
-//     bodySmall:const TextStyle(
-//       fontFamily: 'Stone Serif',
-//       fontSize: 16.0,
-//       fontWeight: FontWeight.bold,
-//       color: Colors.black,
-//     ),
-// //Usage: typing card effect texts
-//     bodyText2: const TextStyle(
-//       fontFamily: 'Matrix',
-//       fontSize: 14.0,
-//       fontWeight: FontWeight.w700,
-//       color: Colors.black,
-//     ),
-// //Usage: Usage: typing Normal Monsters' card lores
-//     // bodyText1: const TextStyle(
-//     //   fontFamily: 'Stone Serif',
-//     //   fontSize: 16.0,
-//     //   fontWeight: FontWeight.w600,
-//     //   color: Colors.black,
-//     // ),
-//      headline6: GoogleFonts.openSans(
-//       fontSize: 20.0,
-//       fontWeight: FontWeight.w600,
-//       color: Colors.white,
-//     ),
-//   );
-
-  static TextTheme lightTextTheme = const TextTheme(
-
+  static TextTheme cardTextTheme = const TextTheme(
     //Tittle fist letter
     displayLarge: TextStyle(
       fontFamily: 'Matrix Regular 1',
@@ -55,15 +17,13 @@ class YugiohTheme {
         fontStyle: FontStyle.normal,
         fontSize: 24.0,
         fontWeight: FontWeight.w900,
-        color: Colors.black
-    ),
+        color: Colors.black),
     //type of monster
     bodyLarge: TextStyle(
-      fontFamily: 'Stone Serif Regular 1',
-      fontSize: 10.0,
-      fontWeight: FontWeight.w900,
-        color: Colors.black
-    ),
+        fontFamily: 'Stone Serif Regular 1',
+        fontSize: 10.0,
+        fontWeight: FontWeight.w900,
+        color: Colors.black),
     //description
     bodyMedium: TextStyle(
       fontFamily: 'Stone Serif',
@@ -71,7 +31,6 @@ class YugiohTheme {
       fontWeight: FontWeight.w800,
       color: Color.fromARGB(167, 0, 0, 0),
     ),
-    //ATK E DEF
     bodySmall: TextStyle(
         fontFamily: 'Stone Serif Regular 1',
       fontSize: 10.0,
@@ -79,28 +38,32 @@ class YugiohTheme {
         color: Colors.black
     ),
   );
+  static TextTheme lightTextTheme = const TextTheme(
+    displayLarge: TextStyle(
+      fontFamily: 'Matrix',
+      fontSize: 32.0,
+      fontWeight: FontWeight.w700,
+      color: Colors.black,
+    ),
+    displayMedium: TextStyle(
+      fontFamily: 'Matrix',
+      fontSize: 22.0,
+      fontWeight: FontWeight.w700,
+      color: Colors.black,
+    ),
+  );
 
-  static TextTheme darkTextTheme = TextTheme(
-    displayLarge: const TextStyle(
+  static TextTheme darkTextTheme = const TextTheme(
+    displayLarge: TextStyle(
       fontFamily: 'Matrix',
       fontSize: 32.0,
       fontWeight: FontWeight.w700,
       color: Colors.white,
     ),
-    displayMedium: const TextStyle(
+    displayMedium: TextStyle(
       fontFamily: 'Matrix',
       fontSize: 22.0,
       fontWeight: FontWeight.w700,
-      color: Colors.white,
-    ),
-    displaySmall: GoogleFonts.openSans(
-      fontSize: 16.0,
-      fontWeight: FontWeight.w600,
-      color: Colors.white,
-    ),
-    titleLarge: GoogleFonts.openSans(
-      fontSize: 20.0,
-      fontWeight: FontWeight.w600,
       color: Colors.white,
     ),
   );
@@ -146,59 +109,3 @@ class YugiohTheme {
     );
   }
 }
-
-//TODO SEM LEVEL
-//  if (card.cardType != 'monsterCard')
-//                       Padding(
-//                         padding: const EdgeInsets.fromLTRB(0, 4, 4, 4),
-//                         child: Column(
-//                           children: [
-//                             SizedBox(
-//                               height: size.height * 0.04,
-//                               width: size.width,
-//                               child: Expanded(
-//                                 child: AutoSizeText.rich(
-//                                   TextSpan(
-//                                       text:
-//                                           card.noLevelSubTittle.substring(0, 1),
-//                                       style: textTheme.bodyLarge,
-//                                       children: [
-//                                         TextSpan(
-//                                             text: card.noLevelSubTittle
-//                                                 .substring(1),
-//                                             style: textTheme.displaySmall)
-//                                       ]),
-//                                 ),
-//                               ),
-//                             ),
-//                           ],
-//                         ),
-//                       ),
-
-//TODO LEVEL
-// Padding(
-//                       padding: const EdgeInsets.fromLTRB(0, 4, 4, 4),
-//                       child: SizedBox(
-//                         height: size.height * 0.04,
-//                         width: size.width,
-//                         child: Row(
-//                           mainAxisAlignment: MainAxisAlignment.end,
-//                           children: List.generate(
-//                             card.level,
-//                             (index) => Padding(
-//                               padding: const EdgeInsets.fromLTRB(1, 0, 1, 0),
-//                               child: Container(
-//                                 height: 20,
-//                                 width: 20,
-//                                 decoration: const BoxDecoration(
-//                                   image: DecorationImage(
-//                                     image: AssetImage(AppAssets.level),
-//                                     fit: BoxFit.fill,
-//                                   ),
-//                                 ),
-//                               ),
-//                             ),
-//                           ),
-//                         ),
-//                       ),
-//                     ),

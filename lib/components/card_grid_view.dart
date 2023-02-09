@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:yugioh_cards/components/monster_card.dart';
+import 'package:yugioh_cards/components/display_card.dart';
 import 'package:yugioh_cards/models/models.dart';
 
 class CardGridView extends StatelessWidget {
@@ -19,7 +19,7 @@ class CardGridView extends StatelessWidget {
           final simpleCard = cards[index];
           return Padding(
             padding: const EdgeInsets.all(16.0),
-            child: MonsterCard(card: simpleCard),
+            child: DisplayCard(card: simpleCard),
           );
         },
       ),
