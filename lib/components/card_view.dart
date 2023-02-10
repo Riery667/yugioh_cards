@@ -4,16 +4,14 @@ import 'package:yugioh_cards/app_assets.dart';
 import 'package:yugioh_cards/models/models.dart';
 import 'package:yugioh_cards/yugioh_theme.dart';
 
-class DisplayCard extends StatelessWidget {
+class CardView extends StatelessWidget {
   final YugiohCard card;
-  const DisplayCard({super.key, required this.card});
+  final bool isSelected;
+  const CardView({super.key, required this.card, required this.isSelected});
 
   @override
   Widget build(BuildContext context) {
     final cardNames = card.name.split(' ');
-
-    final textTheme = Theme.of(context).textTheme;
-
     return LayoutBuilder(builder: (context, BoxConstraints bc) {
       final size = bc.biggest;
       return Stack(
@@ -23,7 +21,15 @@ class DisplayCard extends StatelessWidget {
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage(card.backgroundTexture),
+                  fit: BoxFit.cover,
                 ),
+              ),
+            ),
+          ),
+          Positioned.fill(
+            child: DecoratedBox(
+              decoration: BoxDecoration(
+                color: isSelected ? Colors.black45 : null,
               ),
             ),
           ),
@@ -216,10 +222,11 @@ class DisplayCard extends StatelessWidget {
                                 ),
                                 if (card.backgroundTexture !=
                                     'assets/card_texture/normal_texture.png')
-                                Expanded(
-                                  child: AutoSizeText(
-                                    card.description,
-                                    style: YugiohTheme.cardTextTheme.bodyMedium,
+                                  Expanded(
+                                    child: AutoSizeText(
+                                      card.description,
+                                      style:
+                                          YugiohTheme.cardTextTheme.bodyMedium,
                                       minFontSize: 5,
                                     ),
                                   ),
@@ -230,10 +237,9 @@ class DisplayCard extends StatelessWidget {
                                       card.description,
                                       style: YugiohTheme
                                           .cardTextTheme.displaySmall,
-
-                                    minFontSize: 5,
+                                      minFontSize: 5,
+                                    ),
                                   ),
-                                ),
                               ],
                             ),
                           ),
