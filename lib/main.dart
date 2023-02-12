@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:yugioh_cards/home.dart';
 import 'package:yugioh_cards/yugioh_theme.dart';
 
+//APP MADE FOR STUDY.
+
 void main() {
   runApp(const Yugioh());
 }
-
 class Yugioh extends StatelessWidget {
   const Yugioh({super.key});
 

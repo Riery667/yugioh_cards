@@ -13,7 +13,7 @@ class LibraryCardScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return FutureBuilder(
         future: mockService.getLibraryCard(),
-        builder: (context, AsyncSnapshot<LibratyCard> snapshot) {
+        builder: (context, AsyncSnapshot<LibraryCard> snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
             return CardGridView(cards: snapshot.data?.cards ?? []);
             // return Container(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:yugioh_cards/screens/library_card_screen.dart';
+import 'package:yugioh_cards/screens/rank_screen.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -13,7 +14,7 @@ class _HomeState extends State<Home> {
 
   static List<Widget> pages = <Widget>[
     LibraryCardScreen(),
-    Container(color: Colors.green),
+    RankScreen(),
   ];
 
   void _onItemTapped(int index) {
@@ -28,7 +29,7 @@ class _HomeState extends State<Home> {
       appBar: AppBar(
         title: Text(
           'Yu-gi-ho',
-          style: Theme.of(context).textTheme.headline1,
+          style: Theme.of(context).textTheme.displayLarge,
         ),
       ),
       body: pages[_selectedIndex],

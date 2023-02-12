@@ -4,16 +4,16 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:yugioh_cards/models/library_card.dart';
 import 'package:yugioh_cards/models/models.dart';
+import 'package:yugioh_cards/models/rank_player.dart';
 
 class MockYugiohService {
-  Future<LibratyCard> getLibraryCard() async {
+  Future<LibraryCard> getLibraryCard() async {
     final cards = await _getCards();
-
-    return LibratyCard(cards);
+    return LibraryCard(cards);
   }
 
   Future<List<YugiohCard>> _getCards() async {
-    await Future.delayed(const Duration(milliseconds: 1000));
+    await Future.delayed(const Duration(milliseconds: 0));
     final dataString =
         await _loadAsset('assets/sample_data/sample_library_cards.json');
     final Map<String, dynamic> json = jsonDecode(dataString);
@@ -27,13 +27,14 @@ class MockYugiohService {
       } catch (e) {
         debugPrint('Error to convertion from Json');
       }
-      
       return cards;
     } else {
       return [];
     }
   }
 }
+
+
 
 // Loads sample json data from file system
 Future<String> _loadAsset(String path) async {
