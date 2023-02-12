@@ -71,38 +71,36 @@ class CardView extends StatelessWidget {
                       Expanded(
                         child: Padding(
                           padding: const EdgeInsets.fromLTRB(8, 4, 0, 2),
-                          child: Expanded(
-                            child: AutoSizeText.rich(
-                              minFontSize: 7,
-                              TextSpan(
-                                text: cardNames[0].substring(0, 1),
-                                style: YugiohTheme.cardTextTheme.displayLarge,
-                                children: [
-                                  TextSpan(
-                                    text: "${cardNames[0].substring(1)} ",
-                                    style:
-                                        YugiohTheme.cardTextTheme.displayMedium,
-                                  ),
-                                  if (cardNames.length > 1)
-                                    ...List.generate(
-                                      cardNames.length - 1,
-                                      (index) => TextSpan(
-                                        text: cardNames[index + 1]
-                                            .substring(0, 1),
-                                        style: YugiohTheme
-                                            .cardTextTheme.displayLarge,
-                                        children: [
-                                          TextSpan(
-                                            text:
-                                                "${cardNames[index + 1].substring(1)} ",
-                                            style: YugiohTheme
-                                                .cardTextTheme.displayMedium,
-                                          ),
-                                        ],
-                                      ),
-                                    )
-                                ],
-                              ),
+                          child: AutoSizeText.rich(
+                            minFontSize: 7,
+                            TextSpan(
+                              text: cardNames[0].substring(0, 1),
+                              style: YugiohTheme.cardTextTheme.displayLarge,
+                              children: [
+                                TextSpan(
+                                  text: "${cardNames[0].substring(1)} ",
+                                  style:
+                                      YugiohTheme.cardTextTheme.displayMedium,
+                                ),
+                                if (cardNames.length > 1)
+                                  ...List.generate(
+                                    cardNames.length - 1,
+                                    (index) => TextSpan(
+                                      text:
+                                          cardNames[index + 1].substring(0, 1),
+                                      style: YugiohTheme
+                                          .cardTextTheme.displayLarge,
+                                      children: [
+                                        TextSpan(
+                                          text:
+                                              "${cardNames[index + 1].substring(1)} ",
+                                          style: YugiohTheme
+                                              .cardTextTheme.displayMedium,
+                                        ),
+                                      ],
+                                    ),
+                                  )
+                              ],
                             ),
                           ),
                         ),
@@ -110,12 +108,10 @@ class CardView extends StatelessWidget {
                       SizedBox(
                         height: size.height * 0.10,
                         width: size.width * 0.10,
-                        child: Positioned.fill(
-                          child: DecoratedBox(
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                image: AssetImage(card.attribute),
-                              ),
+                        child: DecoratedBox(
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage(card.attribute),
                             ),
                           ),
                         ),
@@ -131,8 +127,7 @@ class CardView extends StatelessWidget {
                     SizedBox(
                       height: size.height * 0.50,
                       width: size.width * 0.83,
-                      child: Positioned.fill(
-                          child: DecoratedBox(
+                      child: DecoratedBox(
                         decoration: BoxDecoration(
                           boxShadow: [
                             BoxShadow(
@@ -166,7 +161,7 @@ class CardView extends StatelessWidget {
                             ),
                           ),
                         ),
-                      )),
+                      ),
                     ),
                     Padding(
                       padding: const EdgeInsets.fromLTRB(0, 4, 4, 6),

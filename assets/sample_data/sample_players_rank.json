@@ -1,0 +1,21 @@
+{
+    "players": [
+        {
+            "playerName" : "KaibaxX",
+            "playerImage" : "assets/profile_pics/seto_kaiba.png",
+            "playerPoints" : 1490,
+            "currentRank" : "1"
+        },
+        {
+            "playerName" : "YugiOhhh",
+            "playerImage" : "assets/profile_pics/yami_yugi.png",
+            "playerPoints" : 1370,
+            "currentRank" : "2"
+        },
+        {
+            "playerName" : "whoIsThisGuy",
+            "playerImage" : "assets/profile_pics/joey.png",
+            "playerPoints" : 960,
+            "currentRank" : "3"
+        }
+    ]}
