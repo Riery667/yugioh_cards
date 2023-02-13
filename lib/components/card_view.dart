@@ -34,7 +34,7 @@ class CardView extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(8),
+            padding: EdgeInsets.all(size.height * 0.015),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -239,38 +239,50 @@ class CardView extends StatelessWidget {
                             ),
                           ),
                           if (card.cardType == 'monsterCard')
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                const Divider(
-                                  height: 1,
-                                  color: Colors.black,
-                                ),
-                                Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Row(
+                            SizedBox(
+                              width: size.width,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.end,
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  const Divider(
+                                    height: 1,
+                                    color: Colors.black,
+                                  ),
+                                  Container(
+                                    color: Colors.green,
+                                    width: size.width,
+                                    child: Row(
                                       mainAxisAlignment: MainAxisAlignment.end,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.end,
                                       children: [
-                                        Text(
-                                          'ATK/    ${card.atk}',
-                                          style: YugiohTheme
-                                              .cardTextTheme.bodySmall,
+                                        Container(
+                                          color: Colors.amber,
+                                          child: AutoSizeText(
+                                            'ATK/    ${card.atk}',
+                                            minFontSize: 6,
+                                            style: YugiohTheme
+                                                .cardTextTheme.bodySmall,
+                                          ),
                                         ),
-                                        const SizedBox(
-                                          width: 5,
+                                        SizedBox(
+                                          width: size.width * 0.05,
                                         ),
-                                        Text(
-                                          'DEF/    ${card.def}',
-                                          style: YugiohTheme
-                                              .cardTextTheme.bodySmall,
+                                        Container(
+                                          color: Colors.blue,
+                                          child: AutoSizeText(
+                                            'DEF/    ${card.def}',
+                                            minFontSize: 6,
+                                            style: YugiohTheme
+                                                .cardTextTheme.bodySmall,
+                                          ),
                                         ),
                                       ],
-                                    )
-                                  ],
-                                )
-                              ],
+                                    ),
+                                  )
+                                ],
+                              ),
                             ),
                         ],
                       ),
