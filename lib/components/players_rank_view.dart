@@ -17,7 +17,7 @@ class PlayersRankView extends StatelessWidget {
         16,
       ),
       child: ListView.separated(
-        physics: const NeverScrollableScrollPhysics(),
+        scrollDirection: Axis.vertical,
         itemBuilder: (context, index) {
           final player = playersRank[index];
           return PlayerRankTile(player: player);

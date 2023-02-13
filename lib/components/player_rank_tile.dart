@@ -13,7 +13,7 @@ class PlayerRankTile extends StatelessWidget {
       children: [
         CircleImage(
           imageProvider: AssetImage(player.playerImage),
-          imageRadius: 40,
+          imageRadius: 50,
         ),
         const SizedBox(
           width: 16,

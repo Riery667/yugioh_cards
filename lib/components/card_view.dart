@@ -34,9 +34,8 @@ class CardView extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.all(size.height * 0.015),
+            padding: EdgeInsets.all(size.height * 0.010),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
                   height: size.height * 0.10,
@@ -72,7 +71,7 @@ class CardView extends StatelessWidget {
                         child: Padding(
                           padding: const EdgeInsets.fromLTRB(8, 4, 0, 2),
                           child: AutoSizeText.rich(
-                            minFontSize: 7,
+                            minFontSize: 5,
                             TextSpan(
                               text: cardNames[0].substring(0, 1),
                               style: YugiohTheme.cardTextTheme.displayLarge,
@@ -175,8 +174,8 @@ class CardView extends StatelessWidget {
                             (index) => Padding(
                               padding: const EdgeInsets.fromLTRB(1, 0, 1, 0),
                               child: Container(
-                                height: size.height * 0.07,
-                                width: size.width * 0.07,
+                                height: size.height * 0.055,
+                                width: size.width * 0.055,
                                 decoration: const BoxDecoration(
                                   image: DecorationImage(
                                     image: AssetImage(AppAssets.level),
@@ -191,92 +190,91 @@ class CardView extends StatelessWidget {
                     ),
                   ],
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 10),
-                  child: Container(
-                    height: size.height * 0.25,
-                    width: size.width,
-                    color: Colors.white38,
-                    child: Padding(
-                      padding: const EdgeInsets.fromLTRB(2, 0, 2, 0),
+                Expanded(
+                  child: Padding(
+                    padding: EdgeInsets.only(top: size.height * 0.01),
+                    child: Container(
+                      width: size.width,
+                      color: Colors.white38,
                       child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Expanded(
                             child: Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
+                                //CARD TYPE
                                 SizedBox(
-                                  child: AutoSizeText(
-                                    card.typeOfMonster,
-                                    style: YugiohTheme.cardTextTheme.bodyLarge,
-                                    minFontSize: 4,
+                                  width: size.width * 0.9,
+                                  height: size.height * 0.04,
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      AutoSizeText(
+                                        card.typeOfMonster,
+                                        style:
+                                            YugiohTheme.cardTextTheme.bodyLarge,
+                                        minFontSize: 2,
+                                      ),
+                                    ],
                                   ),
                                 ),
-                                if (card.backgroundTexture !=
-                                    'assets/card_texture/normal_texture.png')
-                                  Expanded(
-                                    child: AutoSizeText(
-                                      card.description,
-                                      style:
-                                          YugiohTheme.cardTextTheme.bodyMedium,
-                                      minFontSize: 5,
-                                    ),
-                                  ),
-                                if (card.backgroundTexture ==
-                                    'assets/card_texture/normal_texture.png')
-                                  Expanded(
-                                    child: AutoSizeText(
-                                      card.description,
-                                      style: YugiohTheme
-                                          .cardTextTheme.displaySmall,
-                                      minFontSize: 5,
-                                    ),
-                                  ),
                               ],
                             ),
                           ),
+                          //DESCRIPTION
+                          if (card.backgroundTexture !=
+                              'assets/card_texture/normal_texture.png')
+                            Expanded(
+                              flex: 3,
+                              child: AutoSizeText(
+                                card.description,
+                                style: YugiohTheme.cardTextTheme.bodyMedium,
+                                minFontSize: 5,
+                              ),
+                            ),
+                          if (card.backgroundTexture ==
+                              'assets/card_texture/normal_texture.png')
+                            Expanded(
+                              flex: 3,
+                              child: AutoSizeText(
+                                card.description,
+                                style: YugiohTheme.cardTextTheme.displaySmall,
+                                minFontSize: 5,
+                              ),
+                            ),
+                                    
                           if (card.cardType == 'monsterCard')
                             SizedBox(
-                              width: size.width,
                               child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.end,
-                                mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
                                   const Divider(
                                     height: 1,
                                     color: Colors.black,
                                   ),
-                                  Container(
-                                    color: Colors.green,
-                                    width: size.width,
+                                  SizedBox(
+                                    height: size.height * 0.04,
+                                    width: size.width * 0.9,
                                     child: Row(
                                       mainAxisAlignment: MainAxisAlignment.end,
                                       crossAxisAlignment:
                                           CrossAxisAlignment.end,
                                       children: [
-                                        Container(
-                                          color: Colors.amber,
-                                          child: AutoSizeText(
-                                            'ATK/    ${card.atk}',
-                                            minFontSize: 6,
-                                            style: YugiohTheme
-                                                .cardTextTheme.bodySmall,
-                                          ),
+                                        AutoSizeText(
+                                          'ATK/    ${card.atk}',
+                                          minFontSize: 2,
+                                          style: YugiohTheme
+                                              .cardTextTheme.bodySmall,
                                         ),
                                         SizedBox(
                                           width: size.width * 0.05,
                                         ),
-                                        Container(
-                                          color: Colors.blue,
-                                          child: AutoSizeText(
-                                            'DEF/    ${card.def}',
-                                            minFontSize: 6,
-                                            style: YugiohTheme
-                                                .cardTextTheme.bodySmall,
-                                          ),
+                                        AutoSizeText(
+                                          'DEF/    ${card.def}',
+                                          minFontSize: 2,
+                                          style: YugiohTheme
+                                              .cardTextTheme.bodySmall,
                                         ),
                                       ],
                                     ),
