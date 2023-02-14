@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:yugioh_cards/components/library_card_view.dart';
+import 'package:provider/provider.dart';
+import 'package:yugioh_cards/models/models.dart';
 import 'package:yugioh_cards/screens/deck_screen.dart';
 import 'package:yugioh_cards/screens/rank_screen.dart';
 
@@ -11,39 +12,44 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  int _selectedIndex = 0;
-
-  static List<Widget> pages = <Widget>[
+  List<Widget> pages = <Widget>[
     const DeckScreen(),
     RankScreen(),
   ];
 
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Yu-gi-ho',
-          style: Theme.of(context).textTheme.displayLarge,
+    return Consumer<TabManeger>(builder: (context, tabManeger, child) {
+      return Scaffold(
+        appBar: AppBar(
+          title: Text(
+            'Yu-gi-ho',
+            style: Theme.of(context).textTheme.displayLarge,
+          ),
         ),
-      ),
-      body: pages[_selectedIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: Theme.of(context).textSelectionTheme.selectionColor,
-        currentIndex: _selectedIndex,
-        onTap: _onItemTapped,
-        items: 
-          const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(icon: Icon(Icons.crop_landscape), label: 'cards'),
-            BottomNavigationBarItem(icon: Icon(Icons.clear_all_outlined), label: 'Ranking')
-          ]
-      ),
-    );
+        body: IndexedStack(
+          index: tabManeger.selectedTab,
+          children: pages,
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+          selectedItemColor:
+              Theme.of(context).textSelectionTheme.selectionColor,
+          currentIndex: tabManeger.selectedTab,
+          onTap: (index) {
+            tabManeger.goToTab(index);
+          },
+          items: const [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.cases_rounded),
+              label: 'Deck',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.account_balance_sharp),
+              label: 'Rank',
+            ),
+          ],
+        ),
+      );
+    });
   }
 }

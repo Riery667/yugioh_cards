@@ -8,48 +8,44 @@ class DeckScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(builder: (context, BoxConstraints bc) {
-      final size = bc.biggest;
-
-      return Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Container(
-          color: Colors.green,
-          child: Row(
-            children: [
-              //Selected Card with description
-              Expanded(
-                flex: 3,
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                      color: Colors.amber, child: const SelectedCardView()),
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Container(
+        color: Colors.green,
+        child: Row(
+          children: [
+            //Selected Card with description
+            Expanded(
+              flex: 3,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                    color: Colors.amber, child: const SelectedCardView()),
+              ),
+            ),
+            Expanded(
+              flex: 5,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  color: Colors.red.shade300,
+                  child: LibraryCardView(),
                 ),
               ),
-              Expanded(
-                flex: 5,
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                    color: Colors.red.shade300,
-                    child: LibraryCardView(),
-                  ),
+            ),
+            Expanded(
+              flex: 2,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  color: Colors.purple.shade300,
+                  child: const TrunkView(),
                 ),
               ),
-              Expanded(
-                flex: 2,
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                    color: Colors.purple.shade300,
-                    child: const TrunkView(),
-                  ),
-                ),
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
-      );
-    });
+      ),
+    );
   }
 }
