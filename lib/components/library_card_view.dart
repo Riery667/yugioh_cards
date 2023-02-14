@@ -94,9 +94,7 @@ class LibraryCardView extends StatelessWidget {
                   child: CircularProgressIndicator(),
                 );
               },
-              child: MiniCardGridView(
-                cards: context.read<CardManager>().cards,
-              ),
+              child: const MiniCardGridView(),
             ),
           ),
         );

@@ -13,6 +13,7 @@ class CardManager extends ChangeNotifier {
   }
 
   void _init() async {
+    // await Future.delayed(const Duration(seconds: 3));
     final list = await mockService.getCards();
     selectedCard = list.first;
     cards.addAll(list);

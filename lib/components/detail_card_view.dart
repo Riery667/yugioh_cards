@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:yugioh_cards/models/models.dart';
+import 'package:provider/provider.dart';
+import 'package:yugioh_cards/components/components.dart';
+import 'package:yugioh_cards/models/card_manager.dart';
 import 'package:yugioh_cards/yugioh_theme.dart';
 
 class DetailCardView extends StatefulWidget {
@@ -11,10 +13,6 @@ class DetailCardView extends StatefulWidget {
   State<DetailCardView> createState() => _DetailCardViewState();
 }
 
-var testxps = '3';
-
-YugiohCard? selectedCard;
-
 class _DetailCardViewState extends State<DetailCardView> {
   @override
   Widget build(BuildContext context) {
@@ -25,9 +23,12 @@ class _DetailCardViewState extends State<DetailCardView> {
           // child: Container(
           //   color: Colors.amber,
           // ),
-          child: Text(
-            testxps,
-            style: const TextStyle(fontSize: 50),
+          child: Consumer<CardManager>(
+            builder: (context, value, child) {
+              return CardView(
+                card: value.selectedCard,
+              );
+            },
           ),
         ),
         Expanded(
