@@ -1,14 +1,12 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:yugioh_cards/api/mock_yugioh_service.dart';
+import 'package:provider/provider.dart';
 import 'package:yugioh_cards/components/mini_card_grid_view.dart';
-import 'package:yugioh_cards/models/library_card.dart';
+import 'package:yugioh_cards/models/card_manager.dart';
 import 'package:yugioh_cards/yugioh_theme.dart';
 
 class LibraryCardView extends StatelessWidget {
-  final mockService = MockYugiohService();
-
-  LibraryCardView({super.key});
+  const LibraryCardView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +17,7 @@ class LibraryCardView extends StatelessWidget {
           length: 2,
           child: Scaffold(
             appBar: PreferredSize(
-              preferredSize: Size.fromHeight(size.height * 0.1),
+              preferredSize: const Size.fromHeight(48),
               child: Row(
                 children: [
                   Expanded(
@@ -31,50 +29,49 @@ class LibraryCardView extends StatelessWidget {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
-                                Text(
-                                  'Deck',
-                                  style:
-                                      YugiohTheme.deckTextTheme.displayMedium,
+                                SizedBox(
+                                  child: AutoSizeText(
+                                    minFontSize: 2,
+                                    'Deck',
+                                    style: YugiohTheme.deckTextTheme.bodyLarge,
+                                  ),
                                 ),
                                 SizedBox(
                                   width: size.width * 0.02,
                                 ),
-                                Expanded(
-                                  child: Container(
-                                    color: Colors.white,
-                                    child: Text(
-                                      '41',
-                                      style:
-                                          YugiohTheme.deckTextTheme.bodyLarge,
-                                    ),
+                                Container(
+                                  color: Colors.white,
+                                  child: Text(
+                                    '41',
+                                    style:
+                                        YugiohTheme.deckTextTheme.displayLarge,
                                   ),
                                 ),
                               ],
                             ),
                           ),
-                          Tab(
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                AutoSizeText(
-                                  'Fusion',
-                                  style:
-                                      YugiohTheme.deckTextTheme.displayMedium,
-                                ),
-                                SizedBox(
-                                  width: size.width * 0.02,
-                                ),
-                                Expanded(
-                                  child: Container(
+                          Expanded(
+                            child: Tab(
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  AutoSizeText(
+                                    'Fusion',
+                                    style: YugiohTheme.deckTextTheme.bodyLarge,
+                                  ),
+                                  SizedBox(
+                                    width: size.width * 0.02,
+                                  ),
+                                  Container(
                                     color: Colors.white,
                                     child: AutoSizeText(
                                       '12',
-                                      style:
-                                          YugiohTheme.deckTextTheme.bodyLarge,
+                                      style: YugiohTheme
+                                          .deckTextTheme.displayLarge,
                                     ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
                         ],
@@ -82,23 +79,24 @@ class LibraryCardView extends StatelessWidget {
                     ),
                   ),
                   //Faker Trasnparent bar!!!
-                  Expanded(
-                    child: Container(
-                      color: Colors.green,
-                    ),
+                  const Expanded(
+                    child: SizedBox(),
                   ),
                 ],
               ),
             ),
-            body: FutureBuilder(
-              future: mockService.getLibraryCard(),
-              builder: (context, AsyncSnapshot<LibraryCard> snapshot) {
-                if (snapshot.connectionState == ConnectionState.done) {
-                  return MiniCardGridView(cards: snapshot.data?.cards ?? []);
-                } else {
-                  return const Center(child: CircularProgressIndicator());
+            body: Consumer<CardManager>(
+              builder: (context, cardManager, child) {
+                if (cardManager.isLoaded) {
+                  return child!;
                 }
+                return const Center(
+                  child: CircularProgressIndicator(),
+                );
               },
+              child: MiniCardGridView(
+                cards: context.read<CardManager>().cards,
+              ),
             ),
           ),
         );

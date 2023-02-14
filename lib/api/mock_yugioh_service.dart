@@ -5,12 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:yugioh_cards/models/models.dart';
 
 class MockYugiohService {
-  Future<LibraryCard> getLibraryCard() async {
-    final cards = await _getCards();
-    return LibraryCard(cards);
-  }
-
-  Future<List<YugiohCard>> _getCards() async {
+  Future<List<YugiohCard>> getCards() async {
     await Future.delayed(const Duration(milliseconds: 0));
     final dataString =
         await _loadAsset('assets/sample_data/sample_library_cards.json');
