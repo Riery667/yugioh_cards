@@ -23,11 +23,10 @@ class SelectedCardView extends StatelessWidget {
       Colors.yellow,
       Colors.grey
     ];
-    return LayoutBuilder(builder: (context, BoxConstraints bc) {
-      final size = bc.biggest;
-      return Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
+    return LayoutBuilder(
+      builder: (context, BoxConstraints bc) {
+        final size = bc.biggest;
+        return Column(
           children: [
             Expanded(
               flex: 4,
@@ -111,8 +110,8 @@ class SelectedCardView extends StatelessWidget {
               ),
             ),
           ],
-        ),
-      );
-    });
+        );
+      },
+    );
   }
 }

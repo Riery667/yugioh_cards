@@ -1,6 +1,38 @@
 import 'package:flutter/material.dart';
 
 class YugiohTheme {
+  static TextTheme deckTextTheme = const TextTheme(
+    //Tittle fist letter
+    displayLarge: TextStyle(
+      fontFamily: 'Stone Serif Regular 1',
+      fontStyle: FontStyle.normal,
+      letterSpacing: 0.5,
+      fontSize: 20.0,
+      fontWeight: FontWeight.w900,
+      color: Colors.white,
+    ),
+    //Tittle second + letter
+    displayMedium: TextStyle(
+        fontFamily: 'Stone Serif Regular 1',
+        fontStyle: FontStyle.normal,
+        fontSize: 20.0,
+        fontWeight: FontWeight.w900,
+        color: Colors.white),
+    //type of monster
+    bodyLarge: TextStyle(
+        fontFamily: 'Stone Serif Regular 1',
+        fontSize: 20.0,
+        fontWeight: FontWeight.w600,
+        color: Colors.black),
+    displaySmall: TextStyle(
+      fontFamily: 'Stone Serif',
+      fontSize: 10,
+      fontStyle: FontStyle.italic,
+      fontWeight: FontWeight.w800,
+      color: Color.fromARGB(191, 0, 0, 0),
+    ),
+  );
+
   static TextTheme cardTextTheme = const TextTheme(
     //Tittle fist letter
     displayLarge: TextStyle(
@@ -33,10 +65,9 @@ class YugiohTheme {
     ),
     bodySmall: TextStyle(
         fontFamily: 'Stone Serif Regular 1',
-      fontSize: 10.0,
-      fontWeight: FontWeight.w900,
-        color: Colors.black
-    ),
+        fontSize: 10.0,
+        fontWeight: FontWeight.w900,
+        color: Colors.black),
     displaySmall: TextStyle(
       fontFamily: 'Stone Serif',
       fontSize: 12,
@@ -45,6 +76,7 @@ class YugiohTheme {
       color: Color.fromARGB(167, 0, 0, 0),
     ),
   );
+
   static TextTheme lightTextTheme = const TextTheme(
     displayLarge: TextStyle(
       fontFamily: 'Matrix',
