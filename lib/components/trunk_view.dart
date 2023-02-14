@@ -13,68 +13,65 @@ class TrunkView extends StatelessWidget {
         return DefaultTabController(
           length: 1,
           child: Scaffold(
-            appBar: PreferredSize(
-              preferredSize: Size.fromHeight(size.height * 0.1),
-              child: Row(
-                children: [
-                  Expanded(
-                    flex: 2,
-                    child: AppBar(
-                      backgroundColor: Colors.blue,
-                      bottom: TabBar(
-                        tabs: [
-                          Tab(
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                Text(
-                                  'Trunk',
-                                  style:
-                                      YugiohTheme.deckTextTheme.displayMedium,
-                                ),
-                                SizedBox(
-                                  width: size.width * 0.02,
-                                ),
-                                Expanded(
-                                  child: Container(
+              appBar: PreferredSize(
+                preferredSize: const Size.fromHeight(48),
+                child: Row(
+                  children: [
+                    Expanded(
+                      flex: 2,
+                      child: AppBar(
+                        backgroundColor: Colors.blue,
+                        bottom: TabBar(
+                          tabs: [
+                            Tab(
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  Text(
+                                    'Trunk',
+                                    style: YugiohTheme.deckTextTheme.bodyLarge,
+                                  ),
+                                  SizedBox(
+                                    width: size.width * 0.02,
+                                  ),
+                                  Container(
                                     color: Colors.white,
                                     child: AutoSizeText(
                                       minFontSize: 1,
                                       '1402',
-                                      style:
-                                          YugiohTheme.deckTextTheme.bodyLarge,
+                                      style: YugiohTheme
+                                          .deckTextTheme.displayLarge,
                                     ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
-                  ),
-                  //Faker Trasnparent bar!!!
-                  Expanded(
-                    flex: 1,
-                    child: Container(
-                      color: Colors.green,
+                    //Faker Trasnparent bar!!!
+                    Expanded(
+                      flex: 1,
+                      child: Container(
+                        color: Colors.green,
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-            body: Container(color: Colors.amber),
-            // body: FutureBuilder(
-            //   future: mockService.getLibraryCard(),
-            //   builder: (context, AsyncSnapshot<LibraryCard> snapshot) {
-            //     if (snapshot.connectionState == ConnectionState.done) {
-            //       return CardGridView(cards: snapshot.data?.cards ?? []);
-            //     } else {
-            //       return const Center(child: CircularProgressIndicator());
-            //     }
-            //   },
-            // ),
-          ),
+              body: const SizedBox()
+              // body: FutureBuilder(
+              //   future: mockService.getLibraryCard(),
+              //   builder: (context, AsyncSnapshot<LibraryCard> snapshot) {
+              //     if (snapshot.connectionState == ConnectionState.done) {
+              //       return CardGridView(cards: snapshot.data?.cards ?? []);
+              //     } else {
+              //       return const Center(child: CircularProgressIndicator());
+              //     }
+              //   },
+              // ),
+              ),
         );
       },
     );

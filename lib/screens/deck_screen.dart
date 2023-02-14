@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:yugioh_cards/components/library_card_view.dart';
-import 'package:yugioh_cards/components/selected_card_view.dart';
+import 'package:yugioh_cards/components/detail_card_view.dart';
 import 'package:yugioh_cards/components/trunk_view.dart';
 
 class DeckScreen extends StatelessWidget {
@@ -10,41 +10,45 @@ class DeckScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
-      child: Container(
-        color: Colors.green,
-        child: Row(
-          children: [
-            //Selected Card with description
-            Expanded(
-              flex: 3,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                    color: Colors.amber, child: const SelectedCardView()),
+      child: Stack(
+        children: [
+          const Positioned.fill(
+            child: DecoratedBox(
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/card_texture/background_1.png'),
+                  fit: BoxFit.fill,
+                ),
               ),
             ),
-            Expanded(
-              flex: 5,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  color: Colors.red.shade300,
+          ),
+          Row(
+            children: [
+              //Selected Card with description
+              const Expanded(
+                flex: 3,
+                child: Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: DetailCardView(),
+                ),
+              ),
+              Expanded(
+                flex: 5,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
                   child: LibraryCardView(),
                 ),
               ),
-            ),
-            Expanded(
-              flex: 2,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  color: Colors.purple.shade300,
-                  child: const TrunkView(),
+              const Expanded(
+                flex: 2,
+                child: Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: TrunkView(),
                 ),
               ),
-            ),
-          ],
-        ),
+            ],
+          ),
+        ],
       ),
     );
   }

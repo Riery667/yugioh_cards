@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yugioh_cards/components/detail_card_view.dart';
 import 'package:yugioh_cards/components/mini_card_view.dart';
 import 'package:yugioh_cards/models/models.dart';
 
@@ -13,6 +14,7 @@ class MiniCardGridView extends StatefulWidget {
 
 class _MiniCardGridViewState extends State<MiniCardGridView> {
   YugiohCard? selectedCard;
+
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
@@ -23,11 +25,8 @@ class _MiniCardGridViewState extends State<MiniCardGridView> {
         final simpleCard = widget.cards[index];
         return GestureDetector(
           onTap: () {
-            if (simpleCard == selectedCard) {
-              selectedCard = null;
-            } else {
-              selectedCard = simpleCard;
-            }
+            print(index.toString());
+            testxps = index.toString();
             setState(() {});
           },
           child: Padding(

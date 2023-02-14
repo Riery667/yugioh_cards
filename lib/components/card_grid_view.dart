@@ -35,7 +35,6 @@ class _CardGridViewState extends State<CardGridView> {
             padding: const EdgeInsets.all(4.0),
             child: CardView(
               card: simpleCard,
-              isSelected: selectedCard == simpleCard,
             ),
           ),
         );

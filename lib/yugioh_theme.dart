@@ -4,26 +4,26 @@ class YugiohTheme {
   static TextTheme deckTextTheme = const TextTheme(
     //Tittle fist letter
     displayLarge: TextStyle(
-      fontFamily: 'Stone Serif Regular 1',
+      fontFamily: 'Stone Serif',
       fontStyle: FontStyle.normal,
       letterSpacing: 0.5,
       fontSize: 20.0,
       fontWeight: FontWeight.w900,
-      color: Colors.white,
+      color: Colors.black,
     ),
     //Tittle second + letter
     displayMedium: TextStyle(
-        fontFamily: 'Stone Serif Regular 1',
+        fontFamily: 'Stone Serif',
         fontStyle: FontStyle.normal,
         fontSize: 20.0,
         fontWeight: FontWeight.w900,
         color: Colors.white),
     //type of monster
     bodyLarge: TextStyle(
-        fontFamily: 'Stone Serif Regular 1',
-        fontSize: 20.0,
+        fontFamily: 'Stone Serif',
+        fontSize: 25.0,
         fontWeight: FontWeight.w600,
-        color: Colors.black),
+        color: Colors.white),
     displaySmall: TextStyle(
       fontFamily: 'Stone Serif',
       fontSize: 10,

@@ -6,8 +6,7 @@ import 'package:yugioh_cards/yugioh_theme.dart';
 
 class CardView extends StatelessWidget {
   final YugiohCard card;
-  final bool isSelected;
-  const CardView({super.key, required this.card, required this.isSelected});
+  const CardView({super.key, required this.card});
 
   @override
   Widget build(BuildContext context) {
@@ -26,13 +25,13 @@ class CardView extends StatelessWidget {
               ),
             ),
           ),
-          Positioned.fill(
-            child: DecoratedBox(
-              decoration: BoxDecoration(
-                color: isSelected ? Colors.black45 : null,
-              ),
-            ),
-          ),
+          // Positioned.fill(
+          //   child: DecoratedBox(
+          //     decoration: BoxDecoration(
+          //       color: isSelected ? Colors.black45 : null,
+          //     ),
+          //   ),
+          // ),
           Padding(
             padding: const EdgeInsets.all(8),
             child: Column(
