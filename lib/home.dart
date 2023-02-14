@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:yugioh_cards/screens/library_card_screen.dart';
+import 'package:yugioh_cards/components/library_card_view.dart';
+import 'package:yugioh_cards/screens/deck_screen.dart';
 import 'package:yugioh_cards/screens/rank_screen.dart';
 
 class Home extends StatefulWidget {
@@ -13,7 +14,7 @@ class _HomeState extends State<Home> {
   int _selectedIndex = 0;
 
   static List<Widget> pages = <Widget>[
-    LibraryCardScreen(),
+    const DeckScreen(),
     RankScreen(),
   ];
 
