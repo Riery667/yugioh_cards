@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:yugioh_cards/components/card_view.dart';
 import 'package:yugioh_cards/components/mini_card_view.dart';
 import 'package:yugioh_cards/models/models.dart';
 

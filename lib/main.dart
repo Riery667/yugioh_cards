@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:yugioh_cards/home.dart';
+import 'package:yugioh_cards/models/models.dart';
 import 'package:yugioh_cards/yugioh_theme.dart';
 
 //APP MADE FOR STUDY.
@@ -16,7 +18,11 @@ class Yugioh extends StatelessWidget {
     return MaterialApp(
       theme: theme,
       title: 'Yu-Gi-Oh!',
-      home: const Home(),
+      home: MultiProvider(
+        providers: [
+          ChangeNotifierProvider(create: (context) => TabManeger())
+        ],
+        child: const Home()),
     );
   }
 }

@@ -2,9 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
-import 'package:yugioh_cards/models/library_card.dart';
 import 'package:yugioh_cards/models/models.dart';
-import 'package:yugioh_cards/models/rank_player.dart';
 
 class MockYugiohService {
   Future<LibraryCard> getLibraryCard() async {
@@ -33,8 +31,6 @@ class MockYugiohService {
     }
   }
 }
-
-
 
 // Loads sample json data from file system
 Future<String> _loadAsset(String path) async {
