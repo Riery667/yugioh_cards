@@ -1,24 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:yugioh_cards/components/card_view.dart';
+import 'package:yugioh_cards/components/mini_card_view.dart';
 import 'package:yugioh_cards/models/models.dart';
 
-class CardGridView extends StatefulWidget {
+class MiniCardGridView extends StatefulWidget {
   final List<YugiohCard> cards;
 
-  const CardGridView({super.key, required this.cards});
+  const MiniCardGridView({super.key, required this.cards});
 
   @override
-  State<CardGridView> createState() => _CardGridViewState();
+  State<MiniCardGridView> createState() => _MiniCardGridViewState();
 }
 
-class _CardGridViewState extends State<CardGridView> {
+class _MiniCardGridViewState extends State<MiniCardGridView> {
   YugiohCard? selectedCard;
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
       itemCount: widget.cards.length,
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2, childAspectRatio: 3.1 / 4.6),
+          crossAxisCount: 7, childAspectRatio: 3.1 / 4.6),
       itemBuilder: (context, index) {
         final simpleCard = widget.cards[index];
         return GestureDetector(
@@ -28,12 +29,11 @@ class _CardGridViewState extends State<CardGridView> {
             } else {
               selectedCard = simpleCard;
             }
-
             setState(() {});
           },
           child: Padding(
             padding: const EdgeInsets.all(4.0),
-            child: CardView(
+            child: MiniCardView(
               card: simpleCard,
               isSelected: selectedCard == simpleCard,
             ),
