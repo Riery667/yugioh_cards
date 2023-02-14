@@ -20,7 +20,7 @@ class _CardGridViewState extends State<CardGridView> {
       child: GridView.builder(
         itemCount: widget.cards.length,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 3, childAspectRatio: 3.1 / 4.6),
+            crossAxisCount: 2, childAspectRatio: 3.1 / 4.6),
         itemBuilder: (context, index) {
           final simpleCard = widget.cards[index];
           return GestureDetector(
@@ -34,7 +34,7 @@ class _CardGridViewState extends State<CardGridView> {
               setState(() {});
             },
             child: Padding(
-              padding: const EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(4.0),
               child: CardView(
                 card: simpleCard,
                 isSelected: selectedCard == simpleCard,
