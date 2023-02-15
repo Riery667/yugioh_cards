@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:yugioh_cards/components/library_card_view.dart';
-import 'package:yugioh_cards/components/detail_card_view.dart';
-import 'package:yugioh_cards/components/trunk_view.dart';
+import 'package:yugioh_cards/screens/library_card_view.dart';
+import 'package:yugioh_cards/screens/detail_card_view.dart';
 
 class DeckScreen extends StatelessWidget {
   const DeckScreen({super.key});
@@ -27,25 +26,24 @@ class DeckScreen extends StatelessWidget {
               //Selected Card with description
               const Expanded(
                 flex: 3,
-                child: Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: DetailCardView(),
+                child: SizedBox(
+                  child: Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: DetailCardView(),
+                  ),
                 ),
               ),
               Expanded(
                 flex: 5,
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: LibraryCardView(),
+                child: Container(
+                  color: Colors.black45,
+                  child: const Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: LibraryCardView(),
+                  ),
                 ),
               ),
-              const Expanded(
-                flex: 2,
-                child: Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: TrunkView(),
-                ),
-              ),
+              const Expanded(flex: 2, child: SizedBox.shrink()),
             ],
           ),
         ],

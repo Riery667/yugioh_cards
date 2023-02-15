@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:yugioh_cards/components/mini_card_view.dart';
+import 'package:yugioh_cards/components/mini_card_tile.dart';
 import 'package:yugioh_cards/models/card_manager.dart';
 
-class MiniCardGridView extends StatelessWidget {
-  const MiniCardGridView({super.key});
+class CardGridView extends StatelessWidget {
+  const CardGridView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class MiniCardGridView extends StatelessWidget {
             padding: const EdgeInsets.all(4.0),
             child: Consumer<CardManager>(
               builder: (context, cardManager, child) {
-                return MiniCardView(
+                return MiniCardTile(
                   card: simpleCard,
                   isSelected: cardManager.selectedCard == simpleCard,
                 );

@@ -59,7 +59,7 @@ class YugiohTheme {
     //description
     bodyMedium: TextStyle(
       fontFamily: 'Stone Serif',
-      fontSize: 12,
+      fontSize: 15,
       fontWeight: FontWeight.w800,
       color: Color.fromARGB(167, 0, 0, 0),
     ),

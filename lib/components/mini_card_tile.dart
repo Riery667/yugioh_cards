@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:yugioh_cards/models/models.dart';
 import 'package:yugioh_cards/yugioh_theme.dart';
 
-class MiniCardView extends StatelessWidget {
+class MiniCardTile extends StatelessWidget {
   final YugiohCard card;
   final bool isSelected;
-  const MiniCardView({
+  const MiniCardTile({
     super.key,
     required this.card,
     required this.isSelected,
@@ -67,7 +67,8 @@ class MiniCardView extends StatelessWidget {
                 ),
                 child: Center(
                   child: AutoSizeText(
-                    minFontSize: 4,
+                    minFontSize: 1,
+                    maxLines: 1,
                     card.name,
                     style: YugiohTheme.cardTextTheme.bodySmall,
                   ),

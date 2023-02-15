@@ -137,19 +137,19 @@ class CardView extends StatelessWidget {
                           ],
                           border: const Border(
                             top: BorderSide(
-                              width: 3,
+                              width: 6,
                               color: Colors.white38,
                             ),
                             left: BorderSide(
-                              width: 3,
+                              width: 6,
                               color: Colors.white54,
                             ),
                             bottom: BorderSide(
-                              width: 3,
+                              width: 6,
                               color: Colors.black45,
                             ),
                             right: BorderSide(
-                              width: 3,
+                              width: 6,
                               color: Colors.black54,
                             ),
                           ),
